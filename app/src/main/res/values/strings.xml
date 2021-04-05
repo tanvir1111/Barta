@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Barta</string>
+    <string name="app_name">Barta-MobileNewsApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_news">খবর</string>
+    <string name="title_collection">কালেকশন</string>
+    <string name="title_others">অন্যান্য</string>
+    <string name="title_quiz">কুইজ</string>
 </resources>

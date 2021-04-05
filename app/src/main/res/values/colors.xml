@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="orange_200">#8F2605</color>
+    <color name="orange_500">#E03A06</color>
+    <color name="orange_700">#BF1F0B</color>
+    <color name="actionBarColor">#252427</color>
 </resources>
