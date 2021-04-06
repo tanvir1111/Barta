@@ -7,4 +7,8 @@
     <string name="title_collection">কালেকশন</string>
     <string name="title_others">অন্যান্য</string>
     <string name="title_quiz">কুইজ</string>
+    <string name="bangla">বাংলা</string>
+    <string name="english">ইংরেজী</string>
+    <string name="online">অনলাইন</string>
+ 
 </resources>

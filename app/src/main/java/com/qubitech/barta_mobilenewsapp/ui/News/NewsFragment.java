@@ -11,25 +11,25 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.qubitech.barta_mobilenewsapp.R;
+import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsSectionPagerAdapter;
 
 public class NewsFragment extends Fragment {
 
-    private NewsViewModel newsViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        newsViewModel =
-                new ViewModelProvider(this).get(NewsViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_news, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        newsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+      NewsSectionPagerAdapter sectionsPagerAdapter = new NewsSectionPagerAdapter(getActivity().getSupportFragmentManager(),getContext() );
+      ViewPager viewPager = root.findViewById(R.id.news_frag_view_pager);
+      viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = root.findViewById(R.id.news_frag_tabs);
+        tabs.setupWithViewPager(viewPager);
         return root;
     }
 }
