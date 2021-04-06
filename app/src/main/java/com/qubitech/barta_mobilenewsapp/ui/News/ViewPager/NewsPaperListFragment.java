@@ -46,10 +46,16 @@ public class NewsPaperListFragment extends Fragment {
         englishNewspapers = new ArrayList<>();
         onlineNewspapers = new ArrayList<>();
 
-        bengaliNewspapers.add(new NewsPaperListDataModel("দৈনিক প্রথম আলো",R.drawable.prothomalo));
-        bengaliNewspapers.add(new NewsPaperListDataModel("দৈনিক ইত্তেফাক",R.drawable.ittefaq));
-        bengaliNewspapers.add(new NewsPaperListDataModel("দৈনিক যুগান্তর",R.drawable.jugantor));
-        bengaliNewspapers.add(new NewsPaperListDataModel("দৈনিক কালেরকন্ঠ",R.drawable.kalerkontho));
+
+        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.prothom_alo),R.drawable.prothomalo));
+        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.ittefaq),R.drawable.ittefaq));
+        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.jugantor),R.drawable.jugantor));
+        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.kalerkontho),R.drawable.kalerkontho));
+
+        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.daily_star),R.drawable.daily_star));
+        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.dhaka_tribune),R.drawable.dhakatribune));
+        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.daily_sun),R.drawable.daily_sun));
+        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.bangla_news24),R.drawable.bangla_news_24));
 
         newsPaperListViewModel = new ViewModelProvider(this).get(NewsPaperListViewModel.class);
         int index = 1;

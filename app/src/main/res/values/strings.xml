@@ -10,5 +10,13 @@
     <string name="bangla">বাংলা</string>
     <string name="english">ইংরেজী</string>
     <string name="online">অনলাইন</string>
- 
+    <string name="prothom_alo">দৈনিক প্রথম আলো</string>
+    <string name="ittefaq">দৈনিক ইত্তেফাক</string>
+    <string name="jugantor">দৈনিক যুগান্তর</string>
+    <string name="kalerkontho">দৈনিক কালেরকন্ঠ</string>
+    <string name="daily_star">The Daily Star</string>
+    <string name="dhaka_tribune">Dhaka Tribune</string>
+    <string name="bangla_news24">Bangla News24</string>
+    <string name="daily_sun">Daily Sun</string>
+
 </resources>

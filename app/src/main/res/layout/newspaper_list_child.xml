@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/newspaper_child_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/image_border"

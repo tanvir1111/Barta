@@ -8,8 +8,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/news_frag_tabs"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
 
         app:tabMode="scrollable"
         />
