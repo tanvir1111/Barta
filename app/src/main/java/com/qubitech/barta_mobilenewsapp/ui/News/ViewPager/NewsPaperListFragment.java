@@ -20,59 +20,23 @@ import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.recycler.NewsPaperList
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NewsPaperListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class NewsPaperListFragment extends Fragment {
-   private static final String ARG_SECTION_NUMBER = "section_number";
-   private ArrayList<NewsPaperListDataModel> bengaliNewspapers,englishNewspapers,onlineNewspapers;
 
-    private NewsPaperListViewModel newsPaperListViewModel;
 
-    public static NewsPaperListFragment newInstance(int index) {
-        NewsPaperListFragment fragment = new NewsPaperListFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(ARG_SECTION_NUMBER, index);
-        fragment.setArguments(bundle);
-        return fragment;
+
+
+    ArrayList<NewsPaperListDataModel> newsPaperListData;
+
+    public NewsPaperListFragment(ArrayList<NewsPaperListDataModel> newsPaperListData) {
+        this.newsPaperListData = newsPaperListData;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bengaliNewspapers = new ArrayList<>();
-        englishNewspapers = new ArrayList<>();
-        onlineNewspapers = new ArrayList<>();
 
 
-        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.prothom_alo),R.drawable.prothomalo));
-        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.ittefaq),R.drawable.ittefaq));
-        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.jugantor),R.drawable.jugantor));
-        bengaliNewspapers.add(new NewsPaperListDataModel(getString(R.string.kalerkontho),R.drawable.kalerkontho));
-
-        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.daily_star),R.drawable.daily_star));
-        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.dhaka_tribune),R.drawable.dhakatribune));
-        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.daily_sun),R.drawable.daily_sun));
-        englishNewspapers.add(new NewsPaperListDataModel(getString(R.string.bangla_news24),R.drawable.bangla_news_24));
-
-        newsPaperListViewModel = new ViewModelProvider(this).get(NewsPaperListViewModel.class);
-        int index = 1;
-        if (getArguments() != null) {
-            index = getArguments().getInt(ARG_SECTION_NUMBER);
-        }
-        switch (index){
-            case 0:
-                newsPaperListViewModel.setData(bengaliNewspapers);
-                break;
-            case 1:
-                newsPaperListViewModel.setData(englishNewspapers);
-                break;
-            case 2:
-                newsPaperListViewModel.setData(onlineNewspapers);
-                break;
-        }
 
     }
 
@@ -85,12 +49,7 @@ public class NewsPaperListFragment extends Fragment {
 
         newsPapersRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
 
-        newsPaperListViewModel.getNewsPapers().observe(getViewLifecycleOwner(), new Observer<ArrayList<NewsPaperListDataModel>>() {
-            @Override
-            public void onChanged(ArrayList<NewsPaperListDataModel> newsPaperListDataModels) {
-                newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListDataModels));
-            }
-        });
+       newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData));
         return root;
     }
 }

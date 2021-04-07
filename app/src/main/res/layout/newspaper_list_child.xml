@@ -47,10 +47,10 @@
 
     <View
         android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
 
-        android:background="#707070"
+        android:background="#70707070"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/newspaper_child_star"
         app:layout_constraintStart_toStartOf="@+id/newspaper_child_image"

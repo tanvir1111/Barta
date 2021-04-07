@@ -33,7 +33,7 @@ public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListVie
     @Override
     public void onBindViewHolder(@NonNull NewsPaperListViewHolder holder, int position) {
         holder.newsImg.setImageResource(newsPaperListDataModels.get(position).getImageId());
-        holder.newspaperName.setText(newsPaperListDataModels.get(position).getNewspaperName());
+        holder.newspaperName.setText(ctx.getString(newsPaperListDataModels.get(position).getNewspaperName()));
 
     }
 

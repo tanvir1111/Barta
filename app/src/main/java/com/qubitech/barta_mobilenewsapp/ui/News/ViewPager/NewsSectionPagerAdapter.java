@@ -15,6 +15,7 @@ public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
     private static final int[] TAB_TITLES = new int[]{R.string.bangla, R.string.english,R.string.online};
     private final Context mContext;
 
+
     public NewsSectionPagerAdapter(@NonNull FragmentManager fm, Context mContext) {
         super(fm);
         this.mContext = mContext;
@@ -23,7 +24,18 @@ public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return NewsPaperListFragment.newInstance(position);
+        switch (position){
+            case 0:
+                return new NewsPaperListFragment(NewsPaperListAllData.getBengaliNewsPapers());
+
+            case 1:
+                return new NewsPaperListFragment(NewsPaperListAllData.getEnglishNewsPapers());
+            case 2:
+                return new NewsPaperListFragment(NewsPaperListAllData.getOnlineNewsPapers());
+            default:
+                return null;
+        }
+
     }
 
     @Nullable
