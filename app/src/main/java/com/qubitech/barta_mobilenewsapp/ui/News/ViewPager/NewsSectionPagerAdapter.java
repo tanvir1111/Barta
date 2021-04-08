@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.qubitech.barta_mobilenewsapp.R;
+import com.qubitech.barta_mobilenewsapp.ui.News.NewsFragment;
 
 public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
 
@@ -24,18 +25,7 @@ public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0:
-                return new NewsPaperListFragment(NewsPaperListAllData.getBengaliNewsPapers());
-
-            case 1:
-                return new NewsPaperListFragment(NewsPaperListAllData.getEnglishNewsPapers());
-            case 2:
-                return new NewsPaperListFragment(NewsPaperListAllData.getOnlineNewsPapers());
-            default:
-                return null;
-        }
-
+        return NewsPaperListFragment.newInstance(position);
     }
 
     @Nullable

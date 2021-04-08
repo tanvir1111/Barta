@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.qubitech.barta_mobilenewsapp.R;
 import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.recycler.NewsPaperListAdapter;
@@ -28,13 +29,42 @@ public class NewsPaperListFragment extends Fragment {
 
     ArrayList<NewsPaperListDataModel> newsPaperListData;
 
-    public NewsPaperListFragment(ArrayList<NewsPaperListDataModel> newsPaperListData) {
-        this.newsPaperListData = newsPaperListData;
+
+
+    public static NewsPaperListFragment newInstance(int index) {
+
+        Bundle args = new Bundle();
+        args.putInt("SECTION",index);
+
+        NewsPaperListFragment fragment = new NewsPaperListFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        newsPaperListData = new ArrayList<>();
+
+        int sectionNum = 0;
+        if(getArguments()!=null){
+            sectionNum = getArguments().getInt("SECTION");
+
+        }
+        switch (sectionNum){
+
+
+            case 1:
+                newsPaperListData =  NewsPaperListAllData.getEnglishNewsPapers();
+                break;
+            case 2:
+                newsPaperListData =  NewsPaperListAllData.getOnlineNewsPapers();
+                break;
+            default:
+                newsPaperListData =  NewsPaperListAllData.getBengaliNewsPapers();
+                break;
+        }
+
 
 
 
@@ -52,4 +82,6 @@ public class NewsPaperListFragment extends Fragment {
        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData));
         return root;
     }
+
+
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:scrollbars="none"
+    tools:context=".DetailedNewsActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/coming_soon"
+        android:background="@drawable/image_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="নারায়ণগঞ্জ শহরের কয়লাঘাট এলাকায় শীতলক্ষ্যা নদীতে কার্গো জাহাজের ধাক্কায় যাত্রীবাহী লঞ্চডুবির ঘটনায় আরও ১৫ জনের লাশ উদ্ধার করা হয়। আজ সোমবার দুপুরে ডুবে যাওয়া লঞ্চটি নদীর পূর্বপাড়ে এনে তল্লাশি চালিয়ে লাশগুলো উদ্ধার করা হয়। এ নিয়ে লঞ্চডুবির ঘটনায় মৃতের সংখ্যা বেড়ে দাঁড়াল ২০ জনে।
+\n\n
+লাশ উদ্ধার হওয়া ব্যক্তিদের নাম প্রাথমিকভাবে জানা যায়নি। এখনো নিখোঁজ রয়েছেন বেশ কয়েকজন।
+\n\n
+আজ দুপুরে নারায়ণগঞ্জ সদর উপজেলা নির্বাহী কর্মকর্তা (ইউএনও) নাহিদা বারিক বলেন, ডুবে যাওয়া লঞ্চ নদীর তীরে এনে তল্লাশি চালিয়ে আরও ১৫ জনের লাশ উদ্ধার করা হয়েছে। এ নিয়ে লঞ্চ ডুবির ঘটনায় এখন পর্যন্ত ২০ জনের লাশ উদ্ধার হলো।
+
+এর আগের পাঁচজনের লাশ উদ্ধার করা হয়েছে, তাঁরা হলেন মুন্সিগঞ্জ সদরের মালপাড়া এলাকার হারাধন সাহার স্ত্রী সুনিতা সাহা (৪০), উত্তর চরমসুরা এলাকার অলিউল্লাহর স্ত্রী সখিনা বেগম (৪৫), একই এলাকার প্রীতিময় শর্মার স্ত্রী প্রতিমা শর্মা (৫৩), সদরের নয়াগাঁও পূর্বপাড়া এলাকার মিথুন মিয়ার স্ত্রী সাউদা আক্তার লতা (১৮) ও অজ্ঞাত নারী (৩৪)।
+আরও পড়ুন
+শীতলক্ষ্যায় লঞ্চডুবি, চারজনের মরদেহ স্বজনের কাছে হস্তান্তর
+শীতলক্ষ্যায় লঞ্চডুবি, চারজনের মরদেহ স্বজনের কাছে হস্তান্তর
+
+যাত্রীবাহী লঞ্চটি নারায়ণগঞ্জ থেকে মুন্সিগঞ্জের উদ্দেশে ছেড়ে যায়। গতকাল রোববার সন্ধ্যা ছয়টার দিকে যাত্রীবাহী লঞ্চটি মদনগঞ্জ এলাকায় নির্মাণাধীন তৃতীয় শীতলক্ষ্যা সেতুর কাছাকাছি এসকে-৩ নামের একটি কার্গো জাহাজের ধাক্কায় ডুবে যায়। এ ঘটনায় অনেকে সাঁতরে তীরে উঠে যান। তবে অনেকে নিখোঁজ ছিলেন।"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

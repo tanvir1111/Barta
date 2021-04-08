@@ -1,11 +1,11 @@
 package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.recycler;
 
 public class NewsPaperListDataModel {
-    int name;
+    int nameID;
     int imageId;
 
-    public int getNewspaperName() {
-        return name;
+    public int getNewspaperNameID() {
+        return nameID;
     }
 
     public int getImageId() {
@@ -13,7 +13,7 @@ public class NewsPaperListDataModel {
     }
 
     public NewsPaperListDataModel(int nameID, int imageId) {
-        this.name = nameID;
+        this.nameID = nameID;
         this.imageId = imageId;
     }
 }
