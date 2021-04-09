@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.qubitech.barta_mobilenewsapp.NewsHeadlinesActivity;
 import com.qubitech.barta_mobilenewsapp.R;
+import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,7 @@ public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListVie
             public void onClick(View v) {
                 Intent intent = new Intent(ctx, NewsHeadlinesActivity.class);
                 intent.putExtra("NewspaperName",newsPaperName);
+                NewsPaperListAllData.currentNewspaper = newsPaperName;
                 ctx.startActivity(intent);
             }
         });

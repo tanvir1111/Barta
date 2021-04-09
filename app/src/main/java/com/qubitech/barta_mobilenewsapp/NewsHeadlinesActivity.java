@@ -1,7 +1,10 @@
 package com.qubitech.barta_mobilenewsapp;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,11 +30,12 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
 
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.appbar);
+        getSupportActionBar().setCustomView(R.layout.appbar_with_back);
         //getSupportActionBar().setElevation(0);
         View view = getSupportActionBar().getCustomView();
         TextView title = view.findViewById(R.id.appbar_title);
         title.setText(newsPaperName);
+        ImageView backBtn = view.findViewById(R.id.appbar_back_btn);
 
 
         NewsHeadlinesSectionsPagerAdapter newsHeadlinesSectionsPagerAdapter = new NewsHeadlinesSectionsPagerAdapter(this, getSupportFragmentManager(), NewsPaperListAllData.getTabs().get(newsPaperName));
@@ -39,11 +43,33 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
         viewPager.setAdapter(newsHeadlinesSectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.news_headlines_tab_layout);
         tabs.setupWithViewPager(viewPager);
+        NewsPaperListAllData.currentNewspaperSection = newsHeadlinesSectionsPagerAdapter.getPageTitle(viewPager.getCurrentItem()).toString();
 
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                NewsPaperListAllData.currentNewspaperSection = newsHeadlinesSectionsPagerAdapter.getPageTitle(position).toString();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         Toast.makeText(this,newsPaperName , Toast.LENGTH_SHORT).show();
 
-
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NewsHeadlinesActivity.super.onBackPressed();
+            }
+        });
 
     }
 }

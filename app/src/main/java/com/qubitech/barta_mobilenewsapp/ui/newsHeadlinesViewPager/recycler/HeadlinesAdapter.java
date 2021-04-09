@@ -2,6 +2,7 @@ package com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,6 @@ public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ctx, DetailedNewsActivity.class);
-
                 ctx.startActivity(intent);
             }
         });

@@ -4,27 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="16dp"
     android:scrollbars="none"
     tools:context=".DetailedNewsActivity">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="8dp"
+        android:background="@android:color/background_light"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        >
+
+        <TextView
+            android:id="@+id/section_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:text="Jatio"
+            android:textColor="@color/orange_500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date_and_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:gravity="end"
+
+            android:text="5 april,2020"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/image_border"
         android:scaleType="fitCenter"
         android:src="@drawable/coming_soon"
-        android:background="@drawable/image_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -42,7 +82,7 @@
 যাত্রীবাহী লঞ্চটি নারায়ণগঞ্জ থেকে মুন্সিগঞ্জের উদ্দেশে ছেড়ে যায়। গতকাল রোববার সন্ধ্যা ছয়টার দিকে যাত্রীবাহী লঞ্চটি মদনগঞ্জ এলাকায় নির্মাণাধীন তৃতীয় শীতলক্ষ্যা সেতুর কাছাকাছি এসকে-৩ নামের একটি কার্গো জাহাজের ধাক্কায় ডুবে যায়। এ ঘটনায় অনেকে সাঁতরে তীরে উঠে যান। তবে অনেকে নিখোঁজ ছিলেন।"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -15,6 +15,8 @@ public class NewsPaperListAllData {
     private static ArrayList<NewsPaperListDataModel> onlineNewsPapers =null;
     private static HashMap<String, String[]> tabs =null;
     private static ArrayList<HeadlinesDataModel> headlinesDataModels =null;
+    public static String currentNewspaper =null;
+    public static String currentNewspaperSection =null;
 
     public static ArrayList<NewsPaperListDataModel> getBengaliNewsPapers(){
         if(bengaliNewsPapers==null){

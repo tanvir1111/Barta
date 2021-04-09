@@ -9,8 +9,10 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/news_headlines_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:elevation="10dp"
+        android:paddingHorizontal="8dp"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Small"
 
         app:tabMode="scrollable" />
     <androidx.viewpager.widget.ViewPager

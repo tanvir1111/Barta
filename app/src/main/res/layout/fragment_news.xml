@@ -9,9 +9,10 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/news_frag_tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:elevation="10dp"
 
+        android:paddingHorizontal="8dp"
         app:tabMode="scrollable"
         />
     <androidx.viewpager.widget.ViewPager
