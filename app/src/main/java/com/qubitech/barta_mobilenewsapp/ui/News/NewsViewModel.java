@@ -2,18 +2,26 @@ package com.qubitech.barta_mobilenewsapp.ui.News;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
 import androidx.lifecycle.ViewModel;
+
+import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+
+import java.util.ArrayList;
 
 public class NewsViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<ArrayList<HeadlinesDataModel>> headlinesLiveData = new MutableLiveData<>();
 
-    public NewsViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+    public void setHeadlinesLiveData(ArrayList<HeadlinesDataModel> headlinesData) {
+        headlinesLiveData.setValue(headlinesData);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<ArrayList<HeadlinesDataModel>> getHeadlinesLiveData() {
+        return headlinesLiveData;
+    }
+
+    public NewsViewModel() {
+        headlinesLiveData = new MutableLiveData<>();
     }
 }

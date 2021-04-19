@@ -11,4 +11,5 @@
     <color name="orange_500">#E03A06</color>
     <color name="orange_700">#BF1F0B</color>
     <color name="actionBarColor">#252427</color>
+    <color name="red_primary">#E52C23</color>
 </resources>

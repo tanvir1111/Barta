@@ -26,7 +26,7 @@ public class NewsPaperListFragment extends Fragment {
 
 
 
-
+    int sectionNum = 0;
     ArrayList<NewsPaperListDataModel> newsPaperListData;
 
 
@@ -46,7 +46,7 @@ public class NewsPaperListFragment extends Fragment {
         super.onCreate(savedInstanceState);
         newsPaperListData = new ArrayList<>();
 
-        int sectionNum = 0;
+
         if(getArguments()!=null){
             sectionNum = getArguments().getInt("SECTION");
 
@@ -79,7 +79,7 @@ public class NewsPaperListFragment extends Fragment {
 
         newsPapersRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
 
-       newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData));
+        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData));
         return root;
     }
 

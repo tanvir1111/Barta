@@ -26,7 +26,7 @@ public class NewsHeadlinesSectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return NewsHeadlinesFragment.newInstance(position + 1);
+        return NewsHeadlinesFragment.newInstance(position);
     }
 
     @Nullable

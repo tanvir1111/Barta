@@ -14,9 +14,11 @@ public class NewsPaperListAllData {
     private static ArrayList<NewsPaperListDataModel> englishNewsPapers =null;
     private static ArrayList<NewsPaperListDataModel> onlineNewsPapers =null;
     private static HashMap<String, String[]> tabs =null;
-    private static ArrayList<HeadlinesDataModel> headlinesDataModels =null;
-    public static String currentNewspaper =null;
-    public static String currentNewspaperSection =null;
+//    private static ArrayList<HeadlinesDataModel> headlinesDataModels =null;
+//    public static String currentNewspaper =null;
+//    public static String currentNewspaperSection =null;
+    public static String currentNewspaperIntentARG = "newspaperName";
+    public static String detailedNewsIntentARG = "newsDetails";
 
     public static ArrayList<NewsPaperListDataModel> getBengaliNewsPapers(){
         if(bengaliNewsPapers==null){
@@ -73,20 +75,20 @@ public class NewsPaperListAllData {
     }
 
 
-    public static ArrayList<HeadlinesDataModel> getHeadlines() {
-        if(headlinesDataModels==null){
-            headlinesDataModels = new ArrayList<>();
-
-
-            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-
-
-
-
-        }
-        return headlinesDataModels;
-    }
+//    public static ArrayList<HeadlinesDataModel> getHeadlines() {
+//        if(headlinesDataModels==null){
+//            headlinesDataModels = new ArrayList<>();
+//
+//
+//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
+//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
+//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
+//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
+//
+//
+//
+//
+//        }
+//        return headlinesDataModels;
+//    }
 }

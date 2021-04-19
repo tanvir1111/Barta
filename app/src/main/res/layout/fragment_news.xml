@@ -19,7 +19,7 @@
         android:id="@+id/news_frag_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginTop="30dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 

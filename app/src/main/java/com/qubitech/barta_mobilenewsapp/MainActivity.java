@@ -30,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.appbar);
-        //getSupportActionBar().setElevation(0);
-        View view = getSupportActionBar().getCustomView();
-        TextView title = view.findViewById(R.id.appbar_title);
+//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//        getSupportActionBar().setDisplayShowCustomEnabled(true);
+//        getSupportActionBar().setCustomView(R.layout.appbar);
+//        getSupportActionBar().setHideOffset(0);
+//        getSupportActionBar().setElevation(0);
+//        View view = getSupportActionBar().getCustomView();
+        TextView title = findViewById(R.id.appbar_title);
 
 
 

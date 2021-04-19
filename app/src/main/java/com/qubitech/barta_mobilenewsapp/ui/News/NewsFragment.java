@@ -25,9 +25,9 @@ public class NewsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_news, container, false);
-      NewsSectionPagerAdapter sectionsPagerAdapter = new NewsSectionPagerAdapter(getChildFragmentManager(),getContext() );
-      ViewPager viewPager = root.findViewById(R.id.news_frag_view_pager);
-      viewPager.setAdapter(sectionsPagerAdapter);
+         NewsSectionPagerAdapter sectionsPagerAdapter = new NewsSectionPagerAdapter(getChildFragmentManager(),getContext() );
+        ViewPager viewPager = root.findViewById(R.id.news_frag_view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = root.findViewById(R.id.news_frag_tabs);
         tabs.setupWithViewPager(viewPager);
         return root;

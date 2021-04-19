@@ -5,16 +5,16 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.qubitech.barta_mobilenewsapp.NewsHeadlinesActivity;
 import com.qubitech.barta_mobilenewsapp.R;
-import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData;
 
 import java.util.ArrayList;
+
+import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData.currentNewspaperIntentARG;
 
 public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListViewHolder> {
     Context ctx;
@@ -43,8 +43,8 @@ public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ctx, NewsHeadlinesActivity.class);
-                intent.putExtra("NewspaperName",newsPaperName);
-                NewsPaperListAllData.currentNewspaper = newsPaperName;
+                intent.putExtra(currentNewspaperIntentARG,newsPaperName);
+//                NewsPaperListAllData.currentNewspaper = newsPaperName;
                 ctx.startActivity(intent);
             }
         });
