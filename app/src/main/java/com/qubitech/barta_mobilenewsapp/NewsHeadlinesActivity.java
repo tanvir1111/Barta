@@ -47,23 +47,23 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
 //        NewsPaperListAllData.currentNewspaperSection = newsHeadlinesSectionsPagerAdapter.getPageTitle(viewPager.getCurrentItem()).toString();
 
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                Toast.makeText(NewsHeadlinesActivity.this, Integer.toString(position), Toast.LENGTH_SHORT).show();
+//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                Toast.makeText(NewsHeadlinesActivity.this, Integer.toString(position), Toast.LENGTH_SHORT).show();
 //                NewsPaperListAllData.currentNewspaperSection = newsHeadlinesSectionsPagerAdapter.getPageTitle(position).toString();
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//
+//            }
+//        });
 
         Toast.makeText(this,newsPaperName , Toast.LENGTH_SHORT).show();
 

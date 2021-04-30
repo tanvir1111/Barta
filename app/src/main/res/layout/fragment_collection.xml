@@ -6,12 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".ui.Collection.CollectionFragment">
 
-    <ImageView
-        android:id="@+id/coming_soon"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/collection_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/coming_soon"
-        android:scaleType="fitCenter"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/no_collection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You haven't saved any news yet!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,24 +1,35 @@
 package com.qubitech.barta_mobilenewsapp;
 
-import androidx.appcompat.app.ActionBar;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
 
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData;
+
+import com.qubitech.barta_mobilenewsapp.API.RoomDB;
+
+import com.qubitech.barta_mobilenewsapp.ui.Collection.CollectionViewModel;
+
 import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
 
 import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData.detailedNewsIntentARG;
 
 public class DetailedNewsActivity extends AppCompatActivity {
     private TextView title,section,headline,details,date_time;
-    private ImageView backBtn,newsImage;
+    private ImageView backBtn,newsImage,collectionBtn;
+    RoomDB database;
+    CollectionViewModel collectionViewModel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +39,13 @@ public class DetailedNewsActivity extends AppCompatActivity {
 //        getSupportActionBar().setCustomView(R.layout.appbar_with_back);
 //        getSupportActionBar().setElevation(10);
 //        View view = getSupportActionBar().getCustomView();
+        collectionViewModel= CollectionViewModel.getInstance(this);
+        database= RoomDB.getInstance(this);
+        HeadlinesDataModel detailedNews = (HeadlinesDataModel) getIntent().getSerializableExtra(detailedNewsIntentARG);
+//        if(collectionViewModel==null){
+//            collectionViewModel = new ViewModelProvider(this).get(CollectionViewModel.class);
+//        }
+
 
 
         title = findViewById(R.id.appbar_title);
@@ -37,11 +55,19 @@ public class DetailedNewsActivity extends AppCompatActivity {
         headline = findViewById(R.id.news_headline);
         details = findViewById(R.id.detailed_news);
         date_time = findViewById(R.id.date_and_time);
+        collectionBtn = findViewById(R.id.collection_btn);
 
-        HeadlinesDataModel detailedNews = (HeadlinesDataModel) getIntent().getSerializableExtra(detailedNewsIntentARG);
+        if(database.collectionDao().getNews(detailedNews.getHeadline())!= null){
+            collectionBtn.setImageResource(R.drawable.collection);
+            collectionBtn.setColorFilter(getColor(R.color.red_primary));
+
+        }
+
         details.setText(detailedNews.getDescription());
         date_time.setText(detailedNews.getDate_time());
         headline.setText(detailedNews.getHeadline());
+
+
 
 
 //        Toast.makeText(this, detailedNews.getHeadline(), Toast.LENGTH_SHORT).show();
@@ -49,6 +75,28 @@ public class DetailedNewsActivity extends AppCompatActivity {
         section.setText(detailedNews.getNewsCategory());
         Picasso.get().load(detailedNews.getUrl()).into(newsImage);
 //      Toast.makeText(this, NewsPaperListAllData.currentNewspaperSection, Toast.LENGTH_SHORT).show();
+        collectionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(database.collectionDao().getNews(detailedNews.getHeadline()) ==null){
+                    database.collectionDao().insert(detailedNews);
+                    collectionBtn.setImageResource(R.drawable.collection);
+                    collectionBtn.setColorFilter(getColor(R.color.red_primary));
+
+                }
+                else {
+                    database.collectionDao().delete(detailedNews);
+                    collectionBtn.setImageResource(R.drawable.collection_red);
+
+
+                }
+                collectionViewModel.setCollectionsLiveData((ArrayList<HeadlinesDataModel>) database.collectionDao().getAll());
+
+
+
+
+            }
+        });
 
 
 
