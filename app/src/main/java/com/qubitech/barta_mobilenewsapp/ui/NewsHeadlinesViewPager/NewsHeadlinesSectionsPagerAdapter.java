@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager;
+package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager;
 
 import android.content.Context;
 
@@ -24,8 +24,7 @@ public class NewsHeadlinesSectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
+
         return NewsHeadlinesFragment.newInstance(position);
     }
 

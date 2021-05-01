@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler;
+package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler;
 
 import android.view.View;
 import android.widget.ImageView;

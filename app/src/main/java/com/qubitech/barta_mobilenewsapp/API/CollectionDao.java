@@ -6,9 +6,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static androidx.room.OnConflictStrategy.REPLACE;
@@ -23,8 +22,8 @@ public interface CollectionDao {
 
     @Query("SELECT * FROM collections")
     List<HeadlinesDataModel> getAll();
-    @Query("SELECT * FROM collections where headline = :headline")
-    HeadlinesDataModel getNews(String headline);
+    @Query("SELECT * FROM collections where newsUrl = :newsUrl")
+    HeadlinesDataModel getNews(String newsUrl);
     @Query("SELECT * FROM collections")
     LiveData<List<HeadlinesDataModel>> getAllLiveData();
 }

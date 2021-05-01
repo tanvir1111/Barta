@@ -17,14 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.qubitech.barta_mobilenewsapp.API.RoomDB;
 import com.qubitech.barta_mobilenewsapp.R;
 
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesAdapter;
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesAdapter;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 
-import java.util.ArrayList;
-
+import java.util.List;
 
 
 public class CollectionFragment extends Fragment {
@@ -32,40 +30,39 @@ public class CollectionFragment extends Fragment {
     private CollectionViewModel collectionViewModel;
     RecyclerView collectionRecycler;
     TextView noCollectionText;
-    RoomDB database;
+
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        collectionViewModel = CollectionViewModel.getInstance(this);
+        collectionViewModel = new ViewModelProvider(this).get(CollectionViewModel.class);
         View root = inflater.inflate(R.layout.fragment_collection, container, false);
 
         collectionRecycler = root.findViewById(R.id.collection_recycler);
         noCollectionText=root.findViewById(R.id.no_collection);
-        database= RoomDB.getInstance(getContext());
 
-
-//        headlinesRecycler.setAdapter(new HeadlinesAdapter(getContext(), NewsPaperListAllData.getHeadlines()));
         collectionRecycler.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        updateCollectionsViewModel();
 
 
-        collectionViewModel.getCollectionsLiveData().observe(getViewLifecycleOwner(), new Observer<ArrayList<HeadlinesDataModel>>() {
+
+
+
+        collectionViewModel.getHeadlines().observe(getViewLifecycleOwner(), new Observer<List<HeadlinesDataModel>>() {
             @Override
-            public void onChanged(ArrayList<HeadlinesDataModel> headlinesDataModels) {
+            public void onChanged(List<HeadlinesDataModel> headlinesDataModels) {
                 if(headlinesDataModels.size()==0){
                     noCollectionText.setVisibility(View.VISIBLE);
                 }
                 else {
                     noCollectionText.setVisibility(View.GONE);
                 }
-                collectionRecycler.setAdapter(new HeadlinesAdapter(getContext(), headlinesDataModels));
+                collectionRecycler.setAdapter(new HeadlinesAdapter(getContext(),headlinesDataModels));
+
             }
         });
 
 
         return root;
     }
-    public void updateCollectionsViewModel(){
-        collectionViewModel.setCollectionsLiveData((ArrayList<HeadlinesDataModel>) database.collectionDao().getAll());
-    }
+
 }

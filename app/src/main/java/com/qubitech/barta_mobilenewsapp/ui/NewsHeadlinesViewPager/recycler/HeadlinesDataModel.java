@@ -1,6 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler;
-
-import android.os.Parcelable;
+package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -18,11 +16,9 @@ public class HeadlinesDataModel implements Serializable {
     @SerializedName("imageUrl")
     @Expose
     @ColumnInfo(name = "imageUri")
-    private String url;
+    private String imageUrl;
     @SerializedName("headline")
     @Expose
-    @PrimaryKey
-    @NotNull
     private String  headline;
     @SerializedName("newspaperName")
     @Expose
@@ -43,8 +39,17 @@ public class HeadlinesDataModel implements Serializable {
     private String description;
 
 
-    public String getUrl() {
-        return url;
+
+    @SerializedName("newsUrl")
+    @Expose
+    @ColumnInfo(name = "newsUrl")
+    @PrimaryKey
+    @NotNull
+    private String newsUrl;
+
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getHeadline() {
@@ -62,22 +67,21 @@ public class HeadlinesDataModel implements Serializable {
         return date_time;
     }
 
-
+    public String getNewsUrl() {
+        return newsUrl;
+    }
 
     public String getDescription() {
         return description;
     }
-//    public HeadlinesDataModel(String url, String headline) {
-//        this.url = url;
-//        this.headline = headline;
-//    }
     public @Ignore HeadlinesDataModel(String newspaperName, String newsCategory){
         this.newspaperName = newspaperName;
         this.newsCategory = newsCategory;
     }
-    public HeadlinesDataModel(String url, @NotNull String headline, String newspaperName, String newsCategory, String date_time, String description) {
-        this.url = url;
+    public HeadlinesDataModel(String imageUrl, @NotNull String newsUrl,String headline, String newspaperName, String newsCategory, String date_time, String description) {
+        this.imageUrl = imageUrl;
         this.headline = headline;
+        this.newsUrl = newsUrl;
         this.newspaperName = newspaperName;
         this.newsCategory = newsCategory;
         this.date_time = date_time;

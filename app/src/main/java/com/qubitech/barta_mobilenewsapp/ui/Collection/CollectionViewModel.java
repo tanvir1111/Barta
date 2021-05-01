@@ -2,42 +2,45 @@ package com.qubitech.barta_mobilenewsapp.ui.Collection;
 
 import android.app.Application;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 
-import com.qubitech.barta_mobilenewsapp.API.RoomDB;
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.Repository.CollectionRepository;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionViewModel extends ViewModel {
+public class CollectionViewModel extends AndroidViewModel {
 
-    private MutableLiveData<ArrayList<HeadlinesDataModel>> collectionsLiveData = new MutableLiveData<>();
-    private RoomDB db;
-    public static CollectionViewModel collectionViewModel;
+    private LiveData<List<HeadlinesDataModel>> headlinesLiveData;
+    private CollectionRepository collectionRepository;
 
-    public void setCollectionsLiveData(ArrayList<HeadlinesDataModel> headlinesData) {
-        collectionsLiveData.setValue(headlinesData);
+
+    public CollectionViewModel(@NonNull Application application) {
+        super(application);
+        headlinesLiveData = new MutableLiveData<>();
+        collectionRepository=new CollectionRepository(application);
+        headlinesLiveData = collectionRepository.getAllNews();
+
     }
 
-    public LiveData<ArrayList<HeadlinesDataModel>> getCollectionsLiveData() {
-        return collectionsLiveData;
+    public void insert(HeadlinesDataModel headlinesData){
+        collectionRepository.insert(headlinesData);
+    }
+    public void delete(HeadlinesDataModel headlinesData)
+    {
+        collectionRepository.delete(headlinesData);
     }
 
-    public CollectionViewModel() {
-        collectionsLiveData = new MutableLiveData<>();
+    public LiveData<List<HeadlinesDataModel>> getHeadlines(){
+        return headlinesLiveData;
     }
-    public LiveData<List<HeadlinesDataModel>> getAllCollectionLiveData(){
-        return db.collectionDao().getAllLiveData();
-    }
-    public static CollectionViewModel getInstance(ViewModelStoreOwner owner){
-        if(collectionViewModel==null){
-            collectionViewModel= new ViewModelProvider(owner).get(CollectionViewModel.class);
-        }
-        return collectionViewModel;
+
+
+    public HeadlinesDataModel getNews(String newsUrl) {
+        return collectionRepository.getNews(newsUrl);
+
     }
 }

@@ -1,8 +1,7 @@
-package com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler;
+package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +13,15 @@ import com.qubitech.barta_mobilenewsapp.DetailedNewsActivity;
 import com.qubitech.barta_mobilenewsapp.R;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData.detailedNewsIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.detailedNewsIntentARG;
 
 public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> {
     Context ctx;
-    ArrayList<HeadlinesDataModel> headlinesDataModels;
+    List<HeadlinesDataModel> headlinesDataModels;
 
-    public HeadlinesAdapter(Context ctx, ArrayList<HeadlinesDataModel> headlinesDataModels) {
+    public HeadlinesAdapter(Context ctx, List<HeadlinesDataModel> headlinesDataModels) {
         this.ctx = ctx;
         this.headlinesDataModels = headlinesDataModels;
     }
@@ -40,7 +38,7 @@ public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull HeadlinesViewHolder holder, int position) {
         String headline = headlinesDataModels.get(position).getHeadline();
-        String imageUrl = headlinesDataModels.get(position).getUrl();
+        String imageUrl = headlinesDataModels.get(position).getImageUrl();
         Picasso.get().load(imageUrl).into(holder.headlineImg);
         holder.headline.setText(headline);
         holder.itemView.setOnClickListener(new View.OnClickListener() {

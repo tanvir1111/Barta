@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.recycler;
+package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListRecycler;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import com.qubitech.barta_mobilenewsapp.R;
 
 import java.util.ArrayList;
 
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData.currentNewspaperIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.currentNewspaperIntentARG;
 
 public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListViewHolder> {
     Context ctx;

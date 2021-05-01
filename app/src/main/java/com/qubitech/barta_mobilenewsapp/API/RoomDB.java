@@ -6,9 +6,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 
-@Database(entities = {HeadlinesDataModel.class}, version = 1,exportSchema = false)
+@Database(entities = {HeadlinesDataModel.class}, version = 2,exportSchema = false)
 public abstract class RoomDB  extends RoomDatabase {
     private static RoomDB database;
 

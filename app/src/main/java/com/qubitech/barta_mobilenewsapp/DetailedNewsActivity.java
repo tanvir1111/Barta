@@ -4,6 +4,8 @@ package com.qubitech.barta_mobilenewsapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,22 +13,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.qubitech.barta_mobilenewsapp.API.RoomDB;
-
 import com.qubitech.barta_mobilenewsapp.ui.Collection.CollectionViewModel;
 
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 
-
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListAllData.detailedNewsIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.detailedNewsIntentARG;
 
 public class DetailedNewsActivity extends AppCompatActivity {
     private TextView title,section,headline,details,date_time;
-    private ImageView backBtn,newsImage,collectionBtn;
-    RoomDB database;
+    private ImageView backBtn,newsImage,collectionBtn,shareBtn;
     CollectionViewModel collectionViewModel;
 
 
@@ -34,17 +31,11 @@ public class DetailedNewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_news);
-//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        getSupportActionBar().setDisplayShowCustomEnabled(true);
-//        getSupportActionBar().setCustomView(R.layout.appbar_with_back);
-//        getSupportActionBar().setElevation(10);
-//        View view = getSupportActionBar().getCustomView();
-        collectionViewModel= CollectionViewModel.getInstance(this);
-        database= RoomDB.getInstance(this);
+
+
+        collectionViewModel= new ViewModelProvider(this).get(CollectionViewModel.class);
         HeadlinesDataModel detailedNews = (HeadlinesDataModel) getIntent().getSerializableExtra(detailedNewsIntentARG);
-//        if(collectionViewModel==null){
-//            collectionViewModel = new ViewModelProvider(this).get(CollectionViewModel.class);
-//        }
+
 
 
 
@@ -56,11 +47,11 @@ public class DetailedNewsActivity extends AppCompatActivity {
         details = findViewById(R.id.detailed_news);
         date_time = findViewById(R.id.date_and_time);
         collectionBtn = findViewById(R.id.collection_btn);
+        shareBtn = findViewById(R.id.share_btn);
 
-        if(database.collectionDao().getNews(detailedNews.getHeadline())!= null){
+        if(collectionViewModel.getNews(detailedNews.getNewsUrl())!= null){
             collectionBtn.setImageResource(R.drawable.collection);
             collectionBtn.setColorFilter(getColor(R.color.red_primary));
-
         }
 
         details.setText(detailedNews.getDescription());
@@ -70,31 +61,37 @@ public class DetailedNewsActivity extends AppCompatActivity {
 
 
 
-//        Toast.makeText(this, detailedNews.getHeadline(), Toast.LENGTH_SHORT).show();
+
         title.setText(detailedNews.getNewspaperName());
         section.setText(detailedNews.getNewsCategory());
-        Picasso.get().load(detailedNews.getUrl()).into(newsImage);
-//      Toast.makeText(this, NewsPaperListAllData.currentNewspaperSection, Toast.LENGTH_SHORT).show();
+        Picasso.get().load(detailedNews.getImageUrl()).into(newsImage);
+
         collectionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(database.collectionDao().getNews(detailedNews.getHeadline()) ==null){
-                    database.collectionDao().insert(detailedNews);
+                if(collectionViewModel.getNews(detailedNews.getNewsUrl()) ==null){
+                    collectionViewModel.insert(detailedNews);
                     collectionBtn.setImageResource(R.drawable.collection);
                     collectionBtn.setColorFilter(getColor(R.color.red_primary));
 
                 }
                 else {
-                    database.collectionDao().delete(detailedNews);
+                    collectionViewModel.delete(detailedNews);
                     collectionBtn.setImageResource(R.drawable.collection_red);
 
 
                 }
-                collectionViewModel.setCollectionsLiveData((ArrayList<HeadlinesDataModel>) database.collectionDao().getAll());
 
+            }
+        });
 
-
-
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT,detailedNews.getNewsUrl());
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent,"How do you want to share?"));
             }
         });
 

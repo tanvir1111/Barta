@@ -1,24 +1,22 @@
 package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager;
 
 import com.qubitech.barta_mobilenewsapp.R;
-import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.recycler.NewsPaperListDataModel;
-import com.qubitech.barta_mobilenewsapp.ui.newsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListRecycler.NewsPaperListDataModel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class NewsPaperListAllData {
+public class NewsPapersStaticData {
 
+    public static String currentNewspaperIntentARG = "newspaperName";
+    public static String detailedNewsIntentARG = "newsDetails";
 
     private static ArrayList<NewsPaperListDataModel> bengaliNewsPapers =null;
     private static ArrayList<NewsPaperListDataModel> englishNewsPapers =null;
     private static ArrayList<NewsPaperListDataModel> onlineNewsPapers =null;
     private static HashMap<String, String[]> tabs =null;
-//    private static ArrayList<HeadlinesDataModel> headlinesDataModels =null;
-//    public static String currentNewspaper =null;
-//    public static String currentNewspaperSection =null;
-    public static String currentNewspaperIntentARG = "newspaperName";
-    public static String detailedNewsIntentARG = "newsDetails";
+
+
 
     public static ArrayList<NewsPaperListDataModel> getBengaliNewsPapers(){
         if(bengaliNewsPapers==null){
@@ -75,20 +73,5 @@ public class NewsPaperListAllData {
     }
 
 
-//    public static ArrayList<HeadlinesDataModel> getHeadlines() {
-//        if(headlinesDataModels==null){
-//            headlinesDataModels = new ArrayList<>();
-//
-//
-//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-//            headlinesDataModels.add(new HeadlinesDataModel("abc","abc"));
-//
-//
-//
-//
-//        }
-//        return headlinesDataModels;
-//    }
+
 }
