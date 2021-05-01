@@ -77,6 +77,8 @@ public class HeadlinesDataModel implements Serializable {
     public @Ignore HeadlinesDataModel(String newspaperName, String newsCategory){
         this.newspaperName = newspaperName;
         this.newsCategory = newsCategory;
+    }  public @Ignore HeadlinesDataModel(){
+
     }
     public HeadlinesDataModel(String imageUrl, @NotNull String newsUrl,String headline, String newspaperName, String newsCategory, String date_time, String description) {
         this.imageUrl = imageUrl;
