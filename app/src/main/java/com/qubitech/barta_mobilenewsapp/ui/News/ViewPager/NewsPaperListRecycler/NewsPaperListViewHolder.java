@@ -12,10 +12,12 @@ import com.qubitech.barta_mobilenewsapp.R;
 public class NewsPaperListViewHolder extends RecyclerView.ViewHolder {
     public TextView newspaperName;
     public ImageView newsImg;
+    public ImageView favoriteBtn;
 
     public NewsPaperListViewHolder(@NonNull View itemView) {
         super(itemView);
         newspaperName= itemView.findViewById(R.id.newspaper_name);
         newsImg  = itemView.findViewById(R.id.newspaper_child_image);
+        favoriteBtn=itemView.findViewById(R.id.newspaper_child_star);
     }
 }

@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.detailedNewsIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.detailedNewsIntentARG;
 
 public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> {
     Context ctx;

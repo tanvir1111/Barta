@@ -25,7 +25,7 @@
             android:id="@+id/news_headlines_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-
+            app:tabGravity="start"
             android:elevation="10dp"
             android:paddingHorizontal="8dp"
             app:tabMode="scrollable"
