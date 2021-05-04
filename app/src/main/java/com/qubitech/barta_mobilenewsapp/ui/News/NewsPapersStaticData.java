@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager;
+package com.qubitech.barta_mobilenewsapp.ui.News;
 
 import com.qubitech.barta_mobilenewsapp.R;
 import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListRecycler.NewsPaperListDataModel;
@@ -21,12 +21,10 @@ public class NewsPapersStaticData {
     public static ArrayList<NewsPaperListDataModel> getBengaliNewsPapers(){
         if(bengaliNewsPapers==null){
             bengaliNewsPapers = new ArrayList<>();
-
-
-            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.prothom_alo,R.drawable.prothomalo));
-            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.ittefaq,R.drawable.ittefaq));
-            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.jugantor,R.drawable.jugantor));
-            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.kalerkontho,R.drawable.kalerkontho));
+            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.prothom_alo,R.drawable.prothomalo,0));
+            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.ittefaq,R.drawable.ittefaq,0));
+            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.jugantor,R.drawable.jugantor,0));
+            bengaliNewsPapers.add(new NewsPaperListDataModel(R.string.kalerkontho,R.drawable.kalerkontho,0));
           
 
 
@@ -38,10 +36,10 @@ public class NewsPapersStaticData {
         if(englishNewsPapers==null){
 
             englishNewsPapers = new ArrayList<>();
-            englishNewsPapers.add(new NewsPaperListDataModel(R.string.daily_star,R.drawable.daily_star));
-            englishNewsPapers.add(new NewsPaperListDataModel(R.string.dhaka_tribune,R.drawable.dhakatribune));
-            englishNewsPapers.add(new NewsPaperListDataModel(R.string.daily_sun,R.drawable.daily_sun));
-            englishNewsPapers.add(new NewsPaperListDataModel(R.string.bangla_news24,R.drawable.bangla_news_24));
+            englishNewsPapers.add(new NewsPaperListDataModel(R.string.daily_star,R.drawable.daily_star,1));
+            englishNewsPapers.add(new NewsPaperListDataModel(R.string.dhaka_tribune,R.drawable.dhakatribune,1));
+            englishNewsPapers.add(new NewsPaperListDataModel(R.string.daily_sun,R.drawable.daily_sun,1));
+            englishNewsPapers.add(new NewsPaperListDataModel(R.string.bangla_news24,R.drawable.bangla_news_24,1));
         }
         return englishNewsPapers;
 

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,7 +18,7 @@ import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.Headl
 import com.squareup.picasso.Picasso;
 
 
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.detailedNewsIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.detailedNewsIntentARG;
 
 public class DetailedNewsActivity extends AppCompatActivity {
     private TextView title,section,headline,details,date_time;

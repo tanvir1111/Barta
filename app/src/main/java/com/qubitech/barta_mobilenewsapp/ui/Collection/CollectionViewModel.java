@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.qubitech.barta_mobilenewsapp.Repository.CollectionRepository;
+import com.qubitech.barta_mobilenewsapp.Repository.UserRepository;
 import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 
 import java.util.List;
@@ -15,23 +15,23 @@ import java.util.List;
 public class CollectionViewModel extends AndroidViewModel {
 
     private LiveData<List<HeadlinesDataModel>> headlinesLiveData;
-    private CollectionRepository collectionRepository;
+    private UserRepository userRepository;
 
 
     public CollectionViewModel(@NonNull Application application) {
         super(application);
         headlinesLiveData = new MutableLiveData<>();
-        collectionRepository=new CollectionRepository(application);
-        headlinesLiveData = collectionRepository.getAllNews();
+        userRepository =new UserRepository(application);
+        headlinesLiveData = userRepository.getAllNews();
 
     }
 
     public void insert(HeadlinesDataModel headlinesData){
-        collectionRepository.insert(headlinesData);
+        userRepository.insert(headlinesData);
     }
     public void delete(HeadlinesDataModel headlinesData)
     {
-        collectionRepository.delete(headlinesData);
+        userRepository.delete(headlinesData);
     }
 
     public LiveData<List<HeadlinesDataModel>> getHeadlines(){
@@ -40,7 +40,7 @@ public class CollectionViewModel extends AndroidViewModel {
 
 
     public HeadlinesDataModel getNews(String newsUrl) {
-        return collectionRepository.getNews(newsUrl);
+        return userRepository.getNews(newsUrl);
 
     }
 }

@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.qubitech.barta_mobilenewsapp.R;
-import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData;
+import com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData;
 import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesAdapter;
 import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
 
 import java.util.List;
 
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.currentNewspaperIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.currentNewspaperIntentARG;
 
 /**
  * A placeholder fragment containing a simple view.

@@ -11,12 +11,12 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData;
+import com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData;
 import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.NewsHeadlinesSectionsPagerAdapter;
 
 import java.util.HashMap;
 
-import static com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPapersStaticData.currentNewspaperIntentARG;
+import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.currentNewspaperIntentARG;
 
 public class NewsHeadlinesActivity extends AppCompatActivity {
     private static HashMap<String, String[]> tabs =new HashMap<>();

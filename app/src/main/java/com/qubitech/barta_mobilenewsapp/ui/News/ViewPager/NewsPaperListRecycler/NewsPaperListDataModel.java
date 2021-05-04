@@ -1,19 +1,42 @@
 package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListRecycler;
 
-public class NewsPaperListDataModel {
-    int nameID;
-    int imageId;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-    public int getNewspaperNameID() {
+
+@Entity(tableName = "favorites")
+public class NewsPaperListDataModel {
+
+    @ColumnInfo
+    @PrimaryKey
+    private int nameID;
+    @ColumnInfo
+    private int imageID;
+
+
+
+    @ColumnInfo
+    private int newspaperType;
+
+    public int getNameID() {
         return nameID;
     }
-
-    public int getImageId() {
-        return imageId;
+    public int getNewspaperType() {
+        return newspaperType;
+    }
+    public int getImageID() {
+        return imageID;
     }
 
-    public NewsPaperListDataModel(int nameID, int imageId) {
+//    public NewsPaperListDataModel( int nameID, int imageID) {
+//        this.nameID = nameID;
+//        this.imageID = imageID;
+//    }
+
+    public NewsPaperListDataModel( int nameID, int imageID,int newspaperType) {
         this.nameID = nameID;
-        this.imageId = imageId;
+        this.imageID = imageID;
+        this.newspaperType = newspaperType;
     }
 }
