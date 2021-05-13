@@ -8,6 +8,8 @@
         android:allowBackup="true"
         android:icon="@drawable/barta_logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
         android:roundIcon="@drawable/barta_logo"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
@@ -15,15 +17,20 @@
         <activity android:name=".DetailedNewsActivity"
             android:label="Detailed News"
             android:configChanges="orientation|screenSize|keyboardHidden"
+
             />
         <activity
             android:name=".NewsHeadlinesActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/title_activity_news_headlines" />
+            android:label="@string/title_activity_news_headlines"
+            android:screenOrientation="nosensor"
+            />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            >
             <intent-filter>
                 <action
                     android:name="android.intent.action.MAIN"

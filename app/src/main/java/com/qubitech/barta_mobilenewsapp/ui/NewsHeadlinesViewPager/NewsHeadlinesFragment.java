@@ -21,9 +21,7 @@ import java.util.List;
 
 import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.currentNewspaperIntentARG;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+
 public class NewsHeadlinesFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -32,6 +30,11 @@ public class NewsHeadlinesFragment extends Fragment {
 
     int index=0;
 
+    /**
+     * @param index position of tab
+     * @see NewsHeadlinesSectionsPagerAdapter
+     * @return
+     */
     public static NewsHeadlinesFragment newInstance(int index) {
         NewsHeadlinesFragment fragment = new NewsHeadlinesFragment();
         Bundle bundle = new Bundle();

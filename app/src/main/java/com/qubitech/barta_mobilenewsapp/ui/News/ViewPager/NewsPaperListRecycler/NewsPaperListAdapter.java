@@ -26,7 +26,13 @@ public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListVie
     NewspaperViewModel newspaperViewModel;
 
 
-
+    /**
+     * gets arraylist and sets to recyclerview
+     * observes arraylist in viewmodel
+     * @param ctx
+     * @param newsPaperListDataModels
+     * @param newspaperViewModel
+     */
     public NewsPaperListAdapter(Context ctx, List<NewsPaperListDataModel> newsPaperListDataModels,NewspaperViewModel newspaperViewModel) {
         this.ctx = ctx;
         this.newsPaperListDataModels = newsPaperListDataModels;

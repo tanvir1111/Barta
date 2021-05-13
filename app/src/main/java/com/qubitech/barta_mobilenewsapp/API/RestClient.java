@@ -10,6 +10,9 @@ public class RestClient {
     private static String baseUrl="http://192.168.0.6:3000";
 
 
+    /**
+        *singleTon pattern for {@link RetroInterface}
+     */
     public static RetroInterface getRestClient() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder().baseUrl(baseUrl)

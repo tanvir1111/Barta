@@ -26,13 +26,17 @@ import java.util.List;
 public class NewsPaperListFragment extends Fragment {
 
 
-
+    /**
+     * holds which page is viewed
+     */
     int sectionNum = 0;
     List<NewsPaperListDataModel> newsPaperListData;
     NewspaperViewModel newspaperViewModel;
 
 
-
+    /**
+     * @param index the page number set by {@link NewsSectionPagerAdapter}
+     */
     public static NewsPaperListFragment newInstance(int index) {
 
         Bundle args = new Bundle();
@@ -70,7 +74,10 @@ public class NewsPaperListFragment extends Fragment {
 
         switch (sectionNum){
 
-
+/**
+  sets newspaper list based to {@link newsPapersRecycler} on section Number {@link sectionNum}
+  gets the favorite newspapers from {@link newspaperViewModel}
+ */
             case 1:
                 if(newspaperViewModel.getFavorites(1).getValue()==null){
                     keepFavoritesFirst(NewsPapersStaticData.getEnglishNewsPapers());
@@ -124,6 +131,10 @@ public class NewsPaperListFragment extends Fragment {
         return root;
     }
 
+    /**
+     * @param newsPaperListStaticData
+     * adds newspaper to list if it is not in favorites
+     */
     private void keepFavoritesFirst(ArrayList<NewsPaperListDataModel> newsPaperListStaticData) {
 
         for (NewsPaperListDataModel  newsPaper:

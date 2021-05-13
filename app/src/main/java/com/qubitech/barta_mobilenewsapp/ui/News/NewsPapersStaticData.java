@@ -17,7 +17,9 @@ public class NewsPapersStaticData {
     private static HashMap<String, String[]> tabs =null;
 
 
-
+    /**
+     * @return all bengali Newspapers {@link ArrayList<NewsPaperListDataModel>}
+     */
     public static ArrayList<NewsPaperListDataModel> getBengaliNewsPapers(){
         if(bengaliNewsPapers==null){
             bengaliNewsPapers = new ArrayList<>();
@@ -32,7 +34,12 @@ public class NewsPapersStaticData {
         }
         return bengaliNewsPapers;
 
-    }  public static ArrayList<NewsPaperListDataModel> getEnglishNewsPapers(){
+    }
+
+    /**
+     * @return all english Newspapers {@link ArrayList<NewsPaperListDataModel>}
+     */
+    public static ArrayList<NewsPaperListDataModel> getEnglishNewsPapers(){
         if(englishNewsPapers==null){
 
             englishNewsPapers = new ArrayList<>();
@@ -44,6 +51,10 @@ public class NewsPapersStaticData {
         return englishNewsPapers;
 
     }
+
+    /**
+     * @return all online Newspapers {@link ArrayList<NewsPaperListDataModel>}
+     */
     public static ArrayList<NewsPaperListDataModel> getOnlineNewsPapers(){
         if(onlineNewsPapers==null){
             onlineNewsPapers = new ArrayList<>();
@@ -52,14 +63,18 @@ public class NewsPapersStaticData {
         return onlineNewsPapers;
 
     }
+
+    /**
+     * returns all tabs of a newspaper
+     */
     public static HashMap<String,String[]> getTabs(){
         if (tabs==null){
             tabs=new HashMap<>();
-            tabs.put("দৈনিক প্রথম আলো",new String[] {"জাতীয়", "রাজনীতি", "প্রথম আলো"});
-            tabs.put("দৈনিক ইত্তেফাক",new String[] {"জাতীয়", "রাজনীতি", "ইত্তেফাক"});
-            tabs.put("দৈনিক যুগান্তর",new String[] {"জাতীয়", "রাজনীতি", "যুগান্তর"});
-            tabs.put("দৈনিক কালেরকন্ঠ",new String[] {"জাতীয়", "রাজনীতি", "কালেরকন্ঠ"});
-            tabs.put("The Daily Star",new String[] {"National", "Politics", "Daily Star"});
+            tabs.put("দৈনিক প্রথম আলো",new String[] { "বাংলাদেশ","করোনাভাইরাস","রাজনীতি", "বাণিজ্য","বিশ্ব","খেলা","বিনোদন", "চাকরি","মতামত"});
+            tabs.put("দৈনিক ইত্তেফাক",new String[] {"করোনা আপডেট","রাজধানী","জাতীয়","রাজনীতি","সারাদেশ","বিশ্ব সংবাদ","অর্থনীতি","খেলা","বিনোদন","ভিন্ন চোখে","লাইফস্টাইল","আদালত"});
+            tabs.put("যুগান্তর",new String[] {"অর্থনীতি","আজকের পত্রিকা","আন্তর্জাতিক","কোভিড-১৯","খেলা","জাতীয়","পরবাস","রাজনীতি", "শিক্ষাঙ্গন","সারাদেশ"});
+            tabs.put("দৈনিক কালেরকন্ঠ",new String[] {"জাতীয়","সারাবাংলা","সারাবিশ্ব","খেলা","বাণিজ্য","বিনোদন"});
+            tabs.put("The Daily Star",new String[] {"Country","Environment", "World","Arts-entertainment","Business","Lifestyle","Opinion","Satireday","Shout","Showbiz","Sports","Toggle"});
             tabs.put("Dhaka Tribune",new String[] {"National", "Politics", "Dhaka Tribune"});
             tabs.put("Bangla News24",new String[] {"National", "Politics", "Bangla News24"});
             tabs.put("Daily Sun",new String[] {"National", "Politics", "Daily Sun"});

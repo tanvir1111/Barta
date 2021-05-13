@@ -15,6 +15,10 @@ public abstract class RoomDB  extends RoomDatabase {
 
     private static String DATABASE_NAME = "user_data";
 
+    /**
+     * @param context
+     * @return RoomDB
+     */
     public synchronized static RoomDB getInstance(Context context){
         if (database == null) {
             database = Room.databaseBuilder(context.getApplicationContext(), RoomDB.class, DATABASE_NAME
@@ -24,6 +28,10 @@ public abstract class RoomDB  extends RoomDatabase {
     }
 
 
+    /**
+     * returns data access object
+     * @return {@link UserDao}
+     */
     public abstract UserDao userDao();
 
 }

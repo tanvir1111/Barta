@@ -30,6 +30,9 @@ public class NewsRepository {
     private final Application application;
     FirebaseFirestore db;
 
+    /**
+     * @param application
+     */
     public NewsRepository(Application application) {
        this.application = application;
        headlines=new MutableLiveData<>();
@@ -38,13 +41,23 @@ public class NewsRepository {
     }
 
 
+    /**
+     * returns all news
+     * @param newspaperName
+     * @param newsCategory
+     * @return {@link LiveData<List<HeadlinesDataModel>>}
+     */
     public LiveData<List<HeadlinesDataModel>> getAllNews(String newspaperName,String newsCategory){
         fetchNews(newspaperName,newsCategory);
         return headlines;
     }
 
 
-
+    /**
+     * gets data from firestore and sets livedata
+     * @param newspaperName
+     * @param newsCategory
+     */
     private void fetchNews(String newspaperName,String newsCategory) {
         ArrayList<HeadlinesDataModel> headlinesArrayList= new ArrayList<>();
 

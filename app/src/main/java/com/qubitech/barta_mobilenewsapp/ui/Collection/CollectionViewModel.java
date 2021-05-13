@@ -39,6 +39,10 @@ public class CollectionViewModel extends AndroidViewModel {
     }
 
 
+    /**
+     * @param newsUrl
+     *
+     */
     public HeadlinesDataModel getNews(String newsUrl) {
         return userRepository.getNews(newsUrl);
 

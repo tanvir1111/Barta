@@ -19,11 +19,10 @@ import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.deta
 
 public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> {
     Context ctx;
-    List<HeadlinesDataModel> headlinesDataModels;
-
-    public HeadlinesAdapter(Context ctx, List<HeadlinesDataModel> headlinesDataModels) {
+    List<HeadlinesDataModel> headlinesList;
+    public HeadlinesAdapter(Context ctx, List<HeadlinesDataModel> headlinesList) {
         this.ctx = ctx;
-        this.headlinesDataModels = headlinesDataModels;
+        this.headlinesList = headlinesList;
     }
 
     @NonNull
@@ -37,15 +36,19 @@ public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull HeadlinesViewHolder holder, int position) {
-        String headline = headlinesDataModels.get(position).getHeadline();
-        String imageUrl = headlinesDataModels.get(position).getImageUrl();
+        String headline = headlinesList.get(position).getHeadline();
+        String imageUrl = headlinesList.get(position).getImageUrl();
         Picasso.get().load(imageUrl).into(holder.headlineImg);
         holder.headline.setText(headline);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
+            /**
+             * sends to {@link DetailedNewsActivity } with news
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ctx, DetailedNewsActivity.class);
-                intent.putExtra(detailedNewsIntentARG, headlinesDataModels.get(position));
+                intent.putExtra(detailedNewsIntentARG, headlinesList.get(position));
                 ctx.startActivity(intent);
             }
         });
@@ -53,9 +56,9 @@ public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> 
 
     @Override
     public int getItemCount() {
-        if(headlinesDataModels==null){
+        if(headlinesList ==null){
             return 0;
         }
-        return headlinesDataModels.size();
+        return headlinesList.size();
     }
 }

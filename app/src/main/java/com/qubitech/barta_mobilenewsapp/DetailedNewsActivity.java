@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 
 import android.widget.ImageView;
@@ -53,7 +54,14 @@ public class DetailedNewsActivity extends AppCompatActivity {
             collectionBtn.setColorFilter(getColor(R.color.red_primary));
         }
 
-        details.setText(detailedNews.getDescription());
+        if(detailedNews.getDescription().contains("</")){
+            details.setText(Html.fromHtml( detailedNews.getDescription()));
+        }
+        else {
+            details.setText(detailedNews.getDescription());
+        }
+
+
         date_time.setText(detailedNews.getDate_time());
         headline.setText(detailedNews.getHeadline());
 

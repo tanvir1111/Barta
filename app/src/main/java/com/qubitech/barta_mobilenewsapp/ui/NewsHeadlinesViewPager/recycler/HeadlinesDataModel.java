@@ -11,6 +11,14 @@ import com.google.gson.annotations.SerializedName;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+
+
+/**
+ * A dataModel for a news
+ * fields included for room database
+ * made serializable to pass through intent
+ *
+ */
 @Entity(tableName = "collections")
 public class HeadlinesDataModel implements Serializable {
     @SerializedName("imageUrl")
@@ -74,12 +82,26 @@ public class HeadlinesDataModel implements Serializable {
     public String getDescription() {
         return description;
     }
+
+    /**
+     * used to search for news in database based on newspaperName and newsCategory
+     * @param newspaperName
+     * @param newsCategory
+     * ignored by roomDatabase
+     */
     public @Ignore HeadlinesDataModel(String newspaperName, String newsCategory){
         this.newspaperName = newspaperName;
         this.newsCategory = newsCategory;
-    }  public @Ignore HeadlinesDataModel(){
+    }
+
+
+    /**
+     * mandatory empty constructor
+     */
+    public @Ignore HeadlinesDataModel(){
 
     }
+
     public HeadlinesDataModel(String imageUrl, @NotNull String newsUrl,String headline, String newspaperName, String newsCategory, String date_time, String description) {
         this.imageUrl = imageUrl;
         this.headline = headline;

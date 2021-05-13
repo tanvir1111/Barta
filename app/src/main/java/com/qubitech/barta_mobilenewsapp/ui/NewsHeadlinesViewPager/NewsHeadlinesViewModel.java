@@ -18,6 +18,10 @@ public class NewsHeadlinesViewModel extends AndroidViewModel {
     private NewsRepository newsRepository;
 
 
+    /**
+     * @param application
+     * initializes newsRepository and headlinesLiveData
+     */
     public NewsHeadlinesViewModel(@NonNull Application application) {
         super(application);
         headlinesLiveData = new MutableLiveData<>();
@@ -25,6 +29,13 @@ public class NewsHeadlinesViewModel extends AndroidViewModel {
 
 
     }
+
+    /**
+     * returns all news found from {@link NewsRepository}
+     * @param newspaperName
+     * @param newsCategory
+     * @return {@link LiveData<List<HeadlinesDataModel>>}
+     */
     public LiveData<List<HeadlinesDataModel>> getNews(String newspaperName,String newsCategory){
             headlinesLiveData=newsRepository.getAllNews(newspaperName,newsCategory);
             return headlinesLiveData;

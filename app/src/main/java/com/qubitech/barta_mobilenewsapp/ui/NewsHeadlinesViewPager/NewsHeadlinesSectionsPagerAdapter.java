@@ -16,6 +16,11 @@ public class NewsHeadlinesSectionsPagerAdapter extends FragmentPagerAdapter {
     private String[] tabTitles;
     private final Context mContext;
 
+    /**
+     * @param context
+     * @param fm
+     * @param tabTitles tab titles from {@link com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData}
+     */
     public NewsHeadlinesSectionsPagerAdapter(Context context, FragmentManager fm, String[] tabTitles) {
         super(fm);
         mContext = context;

@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 
+
 @Entity(tableName = "favorites")
 public class NewsPaperListDataModel {
 
@@ -34,6 +35,11 @@ public class NewsPaperListDataModel {
 //        this.imageID = imageID;
 //    }
 
+    /**
+     * @param nameID String Resource id
+     * @param imageID Drawable Resource id
+     * @param newspaperType bengali/english/online
+     */
     public NewsPaperListDataModel( int nameID, int imageID,int newspaperType) {
         this.nameID = nameID;
         this.imageID = imageID;
