@@ -9,7 +9,7 @@
         android:icon="@drawable/barta_logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:hardwareAccelerated="false"
+
         android:roundIcon="@drawable/barta_logo"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
