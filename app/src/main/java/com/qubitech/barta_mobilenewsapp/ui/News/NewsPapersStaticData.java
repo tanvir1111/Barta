@@ -46,7 +46,8 @@ public class NewsPapersStaticData {
             englishNewsPapers.add(new NewsPaperListDataModel(R.string.daily_star,R.drawable.daily_star,1));
             englishNewsPapers.add(new NewsPaperListDataModel(R.string.dhaka_tribune,R.drawable.dhakatribune,1));
             englishNewsPapers.add(new NewsPaperListDataModel(R.string.daily_sun,R.drawable.daily_sun,1));
-            englishNewsPapers.add(new NewsPaperListDataModel(R.string.bangla_news24,R.drawable.bangla_news_24,1));
+
+            englishNewsPapers.add(new NewsPaperListDataModel(R.string.bangladesh_today,R.drawable.bangla_news_24,1));
         }
         return englishNewsPapers;
 
@@ -58,7 +59,7 @@ public class NewsPapersStaticData {
     public static ArrayList<NewsPaperListDataModel> getOnlineNewsPapers(){
         if(onlineNewsPapers==null){
             onlineNewsPapers = new ArrayList<>();
-
+            onlineNewsPapers.add(new NewsPaperListDataModel(R.string.bangla_news24,R.drawable.bangla_news_24,1));
         }
         return onlineNewsPapers;
 
@@ -77,7 +78,9 @@ public class NewsPapersStaticData {
             tabs.put("The Daily Star",new String[] {"Country","Environment", "World","Arts-entertainment","Business","Lifestyle","Opinion","Satireday","Shout","Showbiz","Sports","Toggle"});
             tabs.put("Dhaka Tribune",new String[] {"National", "Politics", "Dhaka Tribune"});
             tabs.put("Bangla News24",new String[] {"National", "Politics", "Bangla News24"});
-            tabs.put("Daily Sun",new String[] {"National", "Politics", "Daily Sun"});
+            tabs.put("Daily Sun",new String[] {"National","World","Economy","Sports","Life-style","Entertainment","Arts","Opinion"});
+            tabs.put("Bangladesh Today",new String[]{
+                    "Business","Campus","Development","Editorial","National","Nationwide" ,"Politics","Sports","Technology","Entertainment", "Environment", "Health","International"});
 
         }
 
