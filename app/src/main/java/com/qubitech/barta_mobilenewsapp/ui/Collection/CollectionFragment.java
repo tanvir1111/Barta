@@ -19,8 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.qubitech.barta_mobilenewsapp.R;
 
-import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesAdapter;
-import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.HeadlinesRecycler.HeadlinesAdapter;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.HeadlinesRecycler.HeadlinesDataModel;
 
 import java.util.List;
 
@@ -28,8 +28,8 @@ import java.util.List;
 public class CollectionFragment extends Fragment {
 
     private CollectionViewModel collectionViewModel;
-    RecyclerView collectionRecycler;
-    TextView noCollectionText;
+    private RecyclerView collectionRecycler;
+    private TextView noCollectionText;
 
 
 

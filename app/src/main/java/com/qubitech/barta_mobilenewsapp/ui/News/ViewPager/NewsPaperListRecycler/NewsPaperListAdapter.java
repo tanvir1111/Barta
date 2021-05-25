@@ -1,5 +1,6 @@
 package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager.NewsPaperListRecycler;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,9 +24,9 @@ import java.util.List;
 import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.currentNewspaperIntentARG;
 
 public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListViewHolder> {
-    Context ctx;
-    List<NewsPaperListDataModel> newsPaperListDataModels;
-    NewspaperViewModel newspaperViewModel;
+    private final Context ctx;
+    private final List<NewsPaperListDataModel> newsPaperListDataModels;
+    private final NewspaperViewModel newspaperViewModel;
 
 
     /**
@@ -44,8 +47,7 @@ public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListVie
     public NewsPaperListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view= LayoutInflater.from(ctx).inflate(R.layout.newspaper_list_child,parent,false);
-        NewsPaperListViewHolder nvh=new NewsPaperListViewHolder(view);
-        return nvh;
+        return new NewsPaperListViewHolder(view);
     }
 
     @Override
@@ -87,8 +89,11 @@ public class NewsPaperListAdapter  extends RecyclerView.Adapter<NewsPaperListVie
             public void onClick(View v) {
                 Intent intent = new Intent(ctx, NewsHeadlinesActivity.class);
                 intent.putExtra(currentNewspaperIntentARG,newsPaperName);
+                Pair[] pairs=new Pair[1];
+                pairs[0]=new Pair<View,String>(holder.newspaperName,holder.newspaperName.getTransitionName());
+                ActivityOptionsCompat options=ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) ctx,pairs);
 //                NewsPaperListAllData.currentNewspaper = newsPaperName;
-                ctx.startActivity(intent);
+                ctx.startActivity(intent,options.toBundle());
             }
         });
 

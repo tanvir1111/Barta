@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler;
+package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.HeadlinesRecycler;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.qubitech.barta_mobilenewsapp.R;
 
 public class HeadlinesViewHolder extends RecyclerView.ViewHolder {
-    public TextView headline;
-    public ImageView headlineImg;
+    TextView headline;
+    ImageView headlineImg;
 
     public HeadlinesViewHolder(@NonNull View itemView) {
         super(itemView);

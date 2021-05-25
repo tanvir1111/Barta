@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="সর্বশেষ খবর"
+        android:transitionName="newspaperName"
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="20sp"

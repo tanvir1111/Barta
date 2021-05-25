@@ -9,26 +9,19 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.qubitech.barta_mobilenewsapp.API.RestClient;
-import com.qubitech.barta_mobilenewsapp.API.RetroInterface;
-import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.HeadlinesRecycler.HeadlinesDataModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class NewsRepository {
 
     private MutableLiveData<List<HeadlinesDataModel>> headlines;
     private final Application application;
-    FirebaseFirestore db;
+    private final FirebaseFirestore db;
 
     /**
      * @param application

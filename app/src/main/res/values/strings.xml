@@ -22,4 +22,9 @@
     <string name="title_activity_news_headlines">NewsHeadlinesActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="amader_shomoy">আমাদের সময়</string>
+    <string name="inqilab">দৈনিক ইনকিলাব</string>
+    <string name="bangladesh_pratidin">বাংলাদেশ প্রতিদিন</string>
+    <string name="independent">The Independent</string>
+
 </resources>

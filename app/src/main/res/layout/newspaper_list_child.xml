@@ -28,6 +28,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/hind_siliguri_light"
         android:text="দৈনিক প্রথম আলো"
+        android:transitionName="newspaperName"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/newspaper_child_image"

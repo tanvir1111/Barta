@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.qubitech.barta_mobilenewsapp.R;
 
 public class NewsPaperListViewHolder extends RecyclerView.ViewHolder {
-    public TextView newspaperName;
-    public ImageView newsImg;
-    public ImageView favoriteBtn;
+     TextView newspaperName;
+     ImageView newsImg;
+     ImageView favoriteBtn;
 
     public NewsPaperListViewHolder(@NonNull View itemView) {
         super(itemView);

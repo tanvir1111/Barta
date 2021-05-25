@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler;
+package com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.HeadlinesRecycler;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

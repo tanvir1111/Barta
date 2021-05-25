@@ -47,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/share_btn"
             app:layout_constraintEnd_toStartOf="@+id/share_btn"
             app:layout_constraintTop_toTopOf="@+id/share_btn"
-            app:layout_constraintVertical_bias="0.583" />
+             />
 
         <ImageView
             android:id="@+id/share_btn"
@@ -97,6 +97,7 @@
                 android:textAlignment="textStart"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:transitionName="headlineTransition"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -110,6 +111,7 @@
                 android:layout_marginEnd="16dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="2dp"
+                android:transitionName="headlineImageTransition"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/date_and_time">
@@ -118,7 +120,9 @@
                     android:id="@+id/news_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
+
                     android:src="@drawable/coming_soon" />
             </androidx.cardview.widget.CardView>
 
@@ -126,9 +130,10 @@
                 android:id="@+id/detailed_news"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:textSize="18sp"
                 android:text="নারায়ণগঞ্জ শহরের কয়লাঘাট এলাকায় শীতলক্ষ্যা নদীতে কার্গো জাহাজের ধাক্কায় যাত্রীবাহী লঞ্চডুবির ঘটনায় আরও ১৫ জনের লাশ উদ্ধার করা হয়। আজ সোমবার দুপুরে ডুবে যাওয়া লঞ্চটি নদীর পূর্বপাড়ে এনে তল্লাশি চালিয়ে লাশগুলো উদ্ধার করা হয়। এ নিয়ে লঞ্চডুবির ঘটনায় মৃতের সংখ্যা বেড়ে দাঁড়াল ২০ জনে।
 \n\n
 লাশ উদ্ধার হওয়া ব্যক্তিদের নাম প্রাথমিকভাবে জানা যায়নি। এখনো নিখোঁজ রয়েছেন বেশ কয়েকজন।
@@ -141,10 +146,11 @@
 শীতলক্ষ্যায় লঞ্চডুবি, চারজনের মরদেহ স্বজনের কাছে হস্তান্তর
 
 যাত্রীবাহী লঞ্চটি নারায়ণগঞ্জ থেকে মুন্সিগঞ্জের উদ্দেশে ছেড়ে যায়। গতকাল রোববার সন্ধ্যা ছয়টার দিকে যাত্রীবাহী লঞ্চটি মদনগঞ্জ এলাকায় নির্মাণাধীন তৃতীয় শীতলক্ষ্যা সেতুর কাছাকাছি এসকে-৩ নামের একটি কার্গো জাহাজের ধাক্কায় ডুবে যায়। এ ঘটনায় অনেকে সাঁতরে তীরে উঠে যান। তবে অনেকে নিখোঁজ ছিলেন।"
-                app:layout_constraintBottom_toBottomOf="parent"
 
-                app:layout_constraintEnd_toEndOf="@+id/news_image_card"
-                app:layout_constraintStart_toStartOf="@+id/news_image_card"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/news_image_card" />
 
 

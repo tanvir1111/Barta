@@ -30,8 +30,9 @@ public class NewsPaperListFragment extends Fragment {
      * holds which page is viewed
      */
     int sectionNum = 0;
-    List<NewsPaperListDataModel> newsPaperListData;
-    NewspaperViewModel newspaperViewModel;
+    private List<NewsPaperListDataModel> newsPaperListData;
+    private NewspaperViewModel newspaperViewModel;
+    private RecyclerView newsPapersRecycler;
 
 
     /**
@@ -69,7 +70,7 @@ public class NewsPaperListFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_news_paper_list, container, false);
-        RecyclerView newsPapersRecycler = root.findViewById(R.id.newspaper_list_recycler);
+        newsPapersRecycler = root.findViewById(R.id.newspaper_list_recycler);
         newsPapersRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
 
         switch (sectionNum){

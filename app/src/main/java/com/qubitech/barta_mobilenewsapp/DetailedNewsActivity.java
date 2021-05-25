@@ -15,7 +15,8 @@ import android.widget.TextView;
 
 import com.qubitech.barta_mobilenewsapp.ui.Collection.CollectionViewModel;
 
-import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.recycler.HeadlinesDataModel;
+import com.qubitech.barta_mobilenewsapp.ui.NewsHeadlinesViewPager.HeadlinesRecycler.HeadlinesDataModel;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 
@@ -24,7 +25,7 @@ import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.deta
 public class DetailedNewsActivity extends AppCompatActivity {
     private TextView title,section,headline,details,date_time;
     private ImageView backBtn,newsImage,collectionBtn,shareBtn;
-    CollectionViewModel collectionViewModel;
+    private CollectionViewModel collectionViewModel;
 
 
     @Override
@@ -32,12 +33,8 @@ public class DetailedNewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_news);
 
-
         collectionViewModel= new ViewModelProvider(this).get(CollectionViewModel.class);
         HeadlinesDataModel detailedNews = (HeadlinesDataModel) getIntent().getSerializableExtra(detailedNewsIntentARG);
-
-
-
 
         title = findViewById(R.id.appbar_title);
         section = findViewById(R.id.section_name);
@@ -61,17 +58,29 @@ public class DetailedNewsActivity extends AppCompatActivity {
             details.setText(detailedNews.getDescription());
         }
 
-
         date_time.setText(detailedNews.getDate_time());
         headline.setText(detailedNews.getHeadline());
-
-
-
-
-
         title.setText(detailedNews.getNewspaperName());
         section.setText(detailedNews.getNewsCategory());
-        Picasso.get().load(detailedNews.getImageUrl()).into(newsImage);
+        if(detailedNews.getImageUrl().isEmpty()){
+            newsImage.setImageResource(R.drawable.image_failed);
+        }
+        else {
+            Picasso.get().load(detailedNews.getImageUrl()).into(newsImage, new Callback() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    newsImage.setImageResource(R.drawable.image_failed);
+
+                }
+            });
+
+
+        }
 
         collectionBtn.setOnClickListener(new View.OnClickListener() {
             @Override

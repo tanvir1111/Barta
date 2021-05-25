@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "837597349640",
-    "project_id": "dummybartadatabase",
-    "storage_bucket": "dummybartadatabase.appspot.com"
+    "project_number": "571175723270",
+    "project_id": "barta-5c921",
+    "storage_bucket": "barta-5c921.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:837597349640:android:65ca05b733c7509b0c0ebd",
+        "mobilesdk_app_id": "1:571175723270:android:16747f646753c44bb0fe87",
         "android_client_info": {
           "package_name": "com.qubitech.barta_mobilenewsapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "837597349640-q8s2eagruihfs0u31f0fja1d6us06k27.apps.googleusercontent.com",
+          "client_id": "571175723270-jkdtmfnrfb7idrc3m1samj2uu3g8hgdu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBgaQ2pYX-FLwMS0dLteMoMCWx2hiu7GKU"
+          "current_key": "AIzaSyDtrvpFLgxsOdCDF2S_HgnuDMCbIAUNG3I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "837597349640-q8s2eagruihfs0u31f0fja1d6us06k27.apps.googleusercontent.com",
+              "client_id": "571175723270-jkdtmfnrfb7idrc3m1samj2uu3g8hgdu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

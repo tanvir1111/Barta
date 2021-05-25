@@ -20,6 +20,12 @@ import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.curr
 
 public class NewsHeadlinesActivity extends AppCompatActivity {
     private static HashMap<String, String[]> tabs =new HashMap<>();
+    private TabLayout tabLayout;
+    private NewsHeadlinesSectionsPagerAdapter newsHeadlinesSectionsPagerAdapter;
+    private ViewPager viewPager;
+    private TextView title;
+    private ImageView backBtn;
+    private String newsPaperName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +33,16 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news_headlines);
         String newsPaperName = getIntent().getStringExtra(currentNewspaperIntentARG);
 
-        TextView title = findViewById(R.id.appbar_title);
+         title = findViewById(R.id.appbar_title);
         title.setText(newsPaperName);
-        ImageView backBtn = findViewById(R.id.appbar_back_btn);
+         backBtn = findViewById(R.id.appbar_back_btn);
 
 
-        NewsHeadlinesSectionsPagerAdapter newsHeadlinesSectionsPagerAdapter = new NewsHeadlinesSectionsPagerAdapter(this, getSupportFragmentManager(), NewsPapersStaticData.getTabs().get(newsPaperName));
-        ViewPager viewPager = findViewById(R.id.news_headlines_view_pager);
-        viewPager.setAdapter(newsHeadlinesSectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.news_headlines_tab_layout);
-        tabs.setupWithViewPager(viewPager);
+         newsHeadlinesSectionsPagerAdapter = new NewsHeadlinesSectionsPagerAdapter(this, getSupportFragmentManager(), NewsPapersStaticData.getTabs().get(newsPaperName));
+         viewPager = findViewById(R.id.news_headlines_view_pager);
+         viewPager.setAdapter(newsHeadlinesSectionsPagerAdapter);
+         tabLayout = findViewById(R.id.news_headlines_tab_layout);
+         tabLayout.setupWithViewPager(viewPager);
 
 
         Toast.makeText(this,newsPaperName , Toast.LENGTH_SHORT).show();
