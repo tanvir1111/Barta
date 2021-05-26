@@ -30,7 +30,8 @@ public class NewsFragment extends Fragment {
          sectionsPagerAdapter = new NewsSectionPagerAdapter(getChildFragmentManager(),getContext() );
          viewPager = root.findViewById(R.id.news_frag_view_pager);
          viewPager.setAdapter(sectionsPagerAdapter);
-         tabs = root.findViewById(R.id.news_frag_tabs);
+
+        tabs = root.findViewById(R.id.news_frag_tabs);
          tabs.setupWithViewPager(viewPager);
         return root;
     }

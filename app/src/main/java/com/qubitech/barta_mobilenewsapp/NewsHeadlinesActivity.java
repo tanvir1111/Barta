@@ -25,7 +25,6 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TextView title;
     private ImageView backBtn;
-    private String newsPaperName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
          tabLayout.setupWithViewPager(viewPager);
 
 
-        Toast.makeText(this,newsPaperName , Toast.LENGTH_SHORT).show();
+
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
