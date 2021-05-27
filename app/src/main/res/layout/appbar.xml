@@ -12,9 +12,9 @@
 
     <ImageView
         android:id="@+id/appbar_app_logo"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
         android:src="@drawable/barta_logo"
         android:transitionName="logo"
         app:layout_constraintBottom_toBottomOf="parent"

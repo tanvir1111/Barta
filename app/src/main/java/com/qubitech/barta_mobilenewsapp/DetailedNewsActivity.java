@@ -55,6 +55,10 @@ public class DetailedNewsActivity extends AppCompatActivity {
             details.setText(Html.fromHtml( detailedNews.getDescription()));
         }
         else {
+            if(detailedNews.getDescription()==null){
+                details.setText("");
+
+            }
             details.setText(detailedNews.getDescription());
         }
 
