@@ -25,15 +25,13 @@ import static com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData.curr
 public class NewsHeadlinesFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-
+    int index = 0;
     private NewsHeadlinesViewModel newsHeadlinesViewModel;
-
-    int index=0;
 
     /**
      * @param index position of tab
-     * @see NewsHeadlinesSectionsPagerAdapter
      * @return
+     * @see NewsHeadlinesSectionsPagerAdapter
      */
     public static NewsHeadlinesFragment newInstance(int index) {
         NewsHeadlinesFragment fragment = new NewsHeadlinesFragment();
@@ -63,13 +61,13 @@ public class NewsHeadlinesFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_news_headlines, container, false);
         RecyclerView headlinesRecycler = root.findViewById(R.id.news_headlines_recycler);
         String currentNewspaper = getActivity().getIntent().getStringExtra(currentNewspaperIntentARG);
-        String newsCategory= NewsPapersStaticData.getTabs().get(currentNewspaper)[index];
+        String newsCategory = NewsPapersStaticData.getTabs().get(currentNewspaper)[index];
 
-        headlinesRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
-        newsHeadlinesViewModel.getNews(currentNewspaper,newsCategory).observe(getViewLifecycleOwner(), new Observer<List<HeadlinesDataModel>>() {
+        headlinesRecycler.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        newsHeadlinesViewModel.getNews(currentNewspaper, newsCategory).observe(getViewLifecycleOwner(), new Observer<List<HeadlinesDataModel>>() {
             @Override
             public void onChanged(List<HeadlinesDataModel> headlinesDataModels) {
-                headlinesRecycler.setAdapter(new HeadlinesAdapter(getContext(),headlinesDataModels));
+                headlinesRecycler.setAdapter(new HeadlinesAdapter(getContext(), headlinesDataModels));
 
             }
         });

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/appbar"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/actionBarColor"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:layout_constraintTop_toTopOf="parent">
 
 
     <ImageView
@@ -27,10 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="সর্বশেষ খবর"
-        android:transitionName="newspaperName"
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:transitionName="newspaperName"
 
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,14 +37,14 @@
         app:layout_constraintStart_toEndOf="@+id/appbar_back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/appbar_profile_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/profile"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/appbar_profile_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

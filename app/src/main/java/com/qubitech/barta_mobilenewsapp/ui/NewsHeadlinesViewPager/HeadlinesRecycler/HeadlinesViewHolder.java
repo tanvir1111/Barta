@@ -15,7 +15,7 @@ public class HeadlinesViewHolder extends RecyclerView.ViewHolder {
 
     public HeadlinesViewHolder(@NonNull View itemView) {
         super(itemView);
-        headline= itemView.findViewById(R.id.news_headline);
-        headlineImg  = itemView.findViewById(R.id.news_headlines_image);
+        headline = itemView.findViewById(R.id.news_headline);
+        headlineImg = itemView.findViewById(R.id.news_headlines_image);
     }
 }

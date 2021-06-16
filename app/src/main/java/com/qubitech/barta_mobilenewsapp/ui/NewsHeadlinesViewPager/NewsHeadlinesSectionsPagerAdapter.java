@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
  */
 public class NewsHeadlinesSectionsPagerAdapter extends FragmentPagerAdapter {
 
-    private String[] tabTitles;
     private final Context mContext;
+    private String[] tabTitles;
 
     /**
      * @param context

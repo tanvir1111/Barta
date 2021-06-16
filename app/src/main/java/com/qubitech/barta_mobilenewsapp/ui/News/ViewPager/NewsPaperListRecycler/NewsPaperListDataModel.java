@@ -5,7 +5,6 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 
-
 @Entity(tableName = "favorites")
 public class NewsPaperListDataModel {
 
@@ -16,18 +15,26 @@ public class NewsPaperListDataModel {
     private int imageID;
 
 
-
     @ColumnInfo
     private int newspaperType;
+
+    /**
+     * @param nameID        String Resource id
+     * @param imageID       Drawable Resource id
+     * @param newspaperType bengali/english/online
+     */
+    public NewsPaperListDataModel(int nameID, int imageID, int newspaperType) {
+        this.nameID = nameID;
+        this.imageID = imageID;
+        this.newspaperType = newspaperType;
+    }
 
     public int getNameID() {
         return nameID;
     }
+
     public int getNewspaperType() {
         return newspaperType;
-    }
-    public int getImageID() {
-        return imageID;
     }
 
 //    public NewsPaperListDataModel( int nameID, int imageID) {
@@ -35,14 +42,7 @@ public class NewsPaperListDataModel {
 //        this.imageID = imageID;
 //    }
 
-    /**
-     * @param nameID String Resource id
-     * @param imageID Drawable Resource id
-     * @param newspaperType bengali/english/online
-     */
-    public NewsPaperListDataModel( int nameID, int imageID,int newspaperType) {
-        this.nameID = nameID;
-        this.imageID = imageID;
-        this.newspaperType = newspaperType;
+    public int getImageID() {
+        return imageID;
     }
 }

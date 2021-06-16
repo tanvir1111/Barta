@@ -21,27 +21,26 @@ public class CollectionViewModel extends AndroidViewModel {
     public CollectionViewModel(@NonNull Application application) {
         super(application);
         headlinesLiveData = new MutableLiveData<>();
-        userRepository =new UserRepository(application);
+        userRepository = new UserRepository(application);
         headlinesLiveData = userRepository.getAllNews();
 
     }
 
-    public void insert(HeadlinesDataModel headlinesData){
+    public void insert(HeadlinesDataModel headlinesData) {
         userRepository.insert(headlinesData);
     }
-    public void delete(HeadlinesDataModel headlinesData)
-    {
+
+    public void delete(HeadlinesDataModel headlinesData) {
         userRepository.delete(headlinesData);
     }
 
-    public LiveData<List<HeadlinesDataModel>> getHeadlines(){
+    public LiveData<List<HeadlinesDataModel>> getHeadlines() {
         return headlinesLiveData;
     }
 
 
     /**
      * @param newsUrl
-     *
      */
     public HeadlinesDataModel getNews(String newsUrl) {
         return userRepository.getNews(newsUrl);

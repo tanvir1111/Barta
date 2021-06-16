@@ -7,11 +7,11 @@ public class RestClient {
 
     private static Retrofit retrofit = null;
 
-    private static String baseUrl="http://192.168.0.6:3000";
+    private static String baseUrl = "http://192.168.0.6:3000";
 
 
     /**
-        *singleTon pattern for {@link RetroInterface}
+     * singleTon pattern for {@link RetroInterface}
      */
     public static RetroInterface getRestClient() {
         if (retrofit == null) {

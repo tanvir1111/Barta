@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.qubitech.barta_mobilenewsapp.R;
-import com.qubitech.barta_mobilenewsapp.ui.News.NewsFragment;
+
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
@@ -19,7 +19,7 @@ public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
     /**
      * Tabs for tab layout
      */
-    private static final int[] TAB_TITLES = new int[]{R.string.bangla, R.string.english,R.string.online};
+    private static final int[] TAB_TITLES = new int[]{R.string.bangla, R.string.english, R.string.online};
     private final Context mContext;
 
 
@@ -30,6 +30,7 @@ public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
 
     /**
      * creates a instance of {@link NewsPaperListFragment} with position
+     *
      * @param position
      * @return
      */
@@ -41,6 +42,7 @@ public class NewsSectionPagerAdapter extends FragmentPagerAdapter {
 
     /**
      * returns title based on the position
+     *
      * @param position
      * @return
      */

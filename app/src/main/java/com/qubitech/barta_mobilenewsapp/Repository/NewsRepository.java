@@ -19,16 +19,16 @@ import java.util.List;
 
 public class NewsRepository {
 
-    private MutableLiveData<List<HeadlinesDataModel>> headlines;
     private final Application application;
     private final FirebaseFirestore db;
+    private MutableLiveData<List<HeadlinesDataModel>> headlines;
 
     /**
      * @param application
      */
     public NewsRepository(Application application) {
-       this.application = application;
-       headlines=new MutableLiveData<>();
+        this.application = application;
+        headlines = new MutableLiveData<>();
         db = FirebaseFirestore.getInstance();
 
     }
@@ -36,23 +36,25 @@ public class NewsRepository {
 
     /**
      * returns all news
+     *
      * @param newspaperName
      * @param newsCategory
      * @return {@link LiveData<List<HeadlinesDataModel>>}
      */
-    public LiveData<List<HeadlinesDataModel>> getAllNews(String newspaperName,String newsCategory){
-        fetchNews(newspaperName,newsCategory);
+    public LiveData<List<HeadlinesDataModel>> getAllNews(String newspaperName, String newsCategory) {
+        fetchNews(newspaperName, newsCategory);
         return headlines;
     }
 
 
     /**
      * gets data from firestore and sets livedata
+     *
      * @param newspaperName
      * @param newsCategory
      */
-    private void fetchNews(String newspaperName,String newsCategory) {
-        ArrayList<HeadlinesDataModel> headlinesArrayList= new ArrayList<>();
+    private void fetchNews(String newspaperName, String newsCategory) {
+        ArrayList<HeadlinesDataModel> headlinesArrayList = new ArrayList<>();
 
         db.collection("News").document(newspaperName).collection(newsCategory)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

@@ -7,11 +7,10 @@
     tools:context=".ui.Quiz.QuizFragment">
 
     <ImageView
-        android:id="@+id/coming_soon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/coming_soon"
         android:scaleType="fitCenter"
+        android:src="@drawable/coming_soon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

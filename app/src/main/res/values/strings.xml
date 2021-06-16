@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Barta-MobileNewsApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_news">খবর</string>
     <string name="title_collection">কালেকশন</string>
     <string name="title_others">অন্যান্য</string>
@@ -17,11 +14,8 @@
     <string name="daily_star">The Daily Star</string>
     <string name="dhaka_tribune">Dhaka Tribune</string>
     <string name="bangla_news24">Bangla News24</string>
-    <string name="bangladesh_today">Bangladesh Today</string>
     <string name="daily_sun">Daily Sun</string>
     <string name="title_activity_news_headlines">NewsHeadlinesActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="amader_shomoy">আমাদের সময়</string>
     <string name="inqilab">দৈনিক ইনকিলাব</string>
     <string name="bangladesh_pratidin">বাংলাদেশ প্রতিদিন</string>

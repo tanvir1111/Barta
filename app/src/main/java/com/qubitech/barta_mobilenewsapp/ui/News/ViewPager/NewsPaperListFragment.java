@@ -1,6 +1,9 @@
 package com.qubitech.barta_mobilenewsapp.ui.News.ViewPager;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -8,11 +11,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.qubitech.barta_mobilenewsapp.R;
 import com.qubitech.barta_mobilenewsapp.ui.News.NewsPapersStaticData;
@@ -41,7 +39,7 @@ public class NewsPaperListFragment extends Fragment {
     public static NewsPaperListFragment newInstance(int index) {
 
         Bundle args = new Bundle();
-        args.putInt("SECTION",index);
+        args.putInt("SECTION", index);
 
         NewsPaperListFragment fragment = new NewsPaperListFragment();
         fragment.setArguments(args);
@@ -55,7 +53,7 @@ public class NewsPaperListFragment extends Fragment {
         newspaperViewModel = new ViewModelProvider(this).get(NewspaperViewModel.class);
 
 
-        if(getArguments()!=null){
+        if (getArguments() != null) {
             sectionNum = getArguments().getInt("SECTION");
 
         }
@@ -64,25 +62,24 @@ public class NewsPaperListFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_news_paper_list, container, false);
         newsPapersRecycler = root.findViewById(R.id.newspaper_list_recycler);
-        newsPapersRecycler.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+        newsPapersRecycler.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
 
-        switch (sectionNum){
+        switch (sectionNum) {
 
 /**
-  sets newspaper list based to {@link newsPapersRecycler} on section Number {@link sectionNum}
-  gets the favorite newspapers from {@link newspaperViewModel}
+ sets newspaper list based to {@link newsPapersRecycler} on section Number {@link sectionNum}
+ gets the favorite newspapers from {@link newspaperViewModel}
  */
             case 1:
-                if(newspaperViewModel.getFavorites(1).getValue()==null){
+                if (newspaperViewModel.getFavorites(1).getValue() == null) {
                     keepFavoritesFirst(NewsPapersStaticData.getEnglishNewsPapers());
-                    newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData,newspaperViewModel));
+                    newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(), newsPaperListData, newspaperViewModel));
                 }
                 newspaperViewModel.getFavorites(1).observe(getViewLifecycleOwner(), new Observer<List<NewsPaperListDataModel>>() {
                     @Override
@@ -90,15 +87,15 @@ public class NewsPaperListFragment extends Fragment {
                         newsPaperListData.clear();
                         newsPaperListData = newsPaperListDataModels;
                         keepFavoritesFirst(NewsPapersStaticData.getEnglishNewsPapers());
-                        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData,newspaperViewModel));
+                        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(), newsPaperListData, newspaperViewModel));
                     }
                 });
 
                 break;
             case 2:
-                if(newspaperViewModel.getFavorites(2).getValue()==null){
+                if (newspaperViewModel.getFavorites(2).getValue() == null) {
                     keepFavoritesFirst(NewsPapersStaticData.getOnlineNewsPapers());
-                    newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData,newspaperViewModel));
+                    newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(), newsPaperListData, newspaperViewModel));
                 }
                 newspaperViewModel.getFavorites(2).observe(getViewLifecycleOwner(), new Observer<List<NewsPaperListDataModel>>() {
                     @Override
@@ -106,23 +103,23 @@ public class NewsPaperListFragment extends Fragment {
                         newsPaperListData.clear();
                         newsPaperListData = newsPaperListDataModels;
                         keepFavoritesFirst(NewsPapersStaticData.getOnlineNewsPapers());
-                        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData,newspaperViewModel));
+                        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(), newsPaperListData, newspaperViewModel));
                     }
                 });
                 break;
             default:
-                if(newspaperViewModel.getFavorites(0).getValue()==null){
+                if (newspaperViewModel.getFavorites(0).getValue() == null) {
                     keepFavoritesFirst(NewsPapersStaticData.getBengaliNewsPapers());
-                    newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData,newspaperViewModel));
+                    newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(), newsPaperListData, newspaperViewModel));
                 }
                 newspaperViewModel.getFavorites(0).observe(getViewLifecycleOwner(), new Observer<List<NewsPaperListDataModel>>() {
                     @Override
                     public void onChanged(List<NewsPaperListDataModel> newsPaperListDataModels) {
                         newsPaperListData.clear();
-                       newsPaperListData = newsPaperListDataModels;
+                        newsPaperListData = newsPaperListDataModels;
 //                        Toast.makeText(getContext(), newsPaperListDataModels.get(0).getNameID(), Toast.LENGTH_SHORT).show();
                         keepFavoritesFirst(NewsPapersStaticData.getBengaliNewsPapers());
-                        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(),newsPaperListData,newspaperViewModel));
+                        newsPapersRecycler.setAdapter(new NewsPaperListAdapter(getContext(), newsPaperListData, newspaperViewModel));
                     }
                 });
                 break;
@@ -133,22 +130,21 @@ public class NewsPaperListFragment extends Fragment {
     }
 
     /**
-     * @param newsPaperListStaticData
-     * adds newspaper to list if it is not in favorites
+     * @param newsPaperListStaticData adds newspaper to list if it is not in favorites
      */
     private void keepFavoritesFirst(ArrayList<NewsPaperListDataModel> newsPaperListStaticData) {
 
-        for (NewsPaperListDataModel  newsPaper:
-             newsPaperListStaticData) {
-            int n=0;
-         for(int i=0;i<newsPaperListData.size();i++){
-             if(newsPaperListData.get(i).getNameID()==newsPaper.getNameID()){
-                 n=1;
-             }
-         }
-         if(n==0){
-             newsPaperListData.add(newsPaper);
-         }
+        for (NewsPaperListDataModel newsPaper :
+                newsPaperListStaticData) {
+            int n = 0;
+            for (int i = 0; i < newsPaperListData.size(); i++) {
+                if (newsPaperListData.get(i).getNameID() == newsPaper.getNameID()) {
+                    n = 1;
+                }
+            }
+            if (n == 0) {
+                newsPaperListData.add(newsPaper);
+            }
 
         }
 

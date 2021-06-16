@@ -1,16 +1,12 @@
 package com.qubitech.barta_mobilenewsapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,13 +20,13 @@ public class SplashActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.activity_splash);
         ImageView splashLogo;
-        splashLogo=findViewById(R.id.splash_logo);
+        splashLogo = findViewById(R.id.splash_logo);
 
-        Handler handler=new Handler();
+        Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
 //                Pair[] pairs=new Pair[1];
 //                pairs[0]=new Pair<View,String>(splashLogo,splashLogo.getTransitionName());
 //                ActivityOptionsCompat options=ActivityOptionsCompat.makeSceneTransitionAnimation(SplashActivity.this,pairs);
@@ -38,6 +34,6 @@ public class SplashActivity extends AppCompatActivity {
 
                 finish();
             }
-        },1500);
+        }, 1500);
     }
 }
