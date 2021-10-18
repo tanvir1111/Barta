@@ -1,4 +1,4 @@
-package com.qubitech.barta_mobilenewsapp;
+package com.qubitech.barta;
 
 import android.content.Context;
 

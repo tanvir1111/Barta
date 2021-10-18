@@ -6,24 +6,24 @@
 
     <fragment
         android:id="@+id/navigation_news"
-        android:name="com.qubitech.barta_mobilenewsapp.ui.News.NewsFragment"
+        android:name="com.qubitech.barta.ui.News.NewsFragment"
         android:label="@string/title_news"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_collection"
-        android:name="com.qubitech.barta_mobilenewsapp.ui.Collection.CollectionFragment"
+        android:name="com.qubitech.barta.ui.Collection.CollectionFragment"
         android:label="@string/title_collection"
         tools:layout="@layout/fragment_collection" />
 
     <fragment
         android:id="@+id/navigation_quiz"
-        android:name="com.qubitech.barta_mobilenewsapp.ui.Quiz.QuizFragment"
+        android:name="com.qubitech.barta.ui.Quiz.QuizFragment"
         android:label="@string/title_quiz"
         tools:layout="@layout/fragment_quiz" />
     <fragment
         android:id="@+id/navigation_others"
-        android:name="com.qubitech.barta_mobilenewsapp.ui.others.OthersFragment"
+        android:name="com.qubitech.barta.ui.others.OthersFragment"
         android:label="@string/title_others"
         tools:layout="@layout/fragment_others" />
 </navigation>
