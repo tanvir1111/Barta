@@ -14,7 +14,7 @@
         android:background="@drawable/image_border"
         android:padding="8dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/prothomalo"
+        android:src="@drawable/news_ic_prothomalo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

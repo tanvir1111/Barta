@@ -37,7 +37,8 @@ public class CollectionFragment extends Fragment {
 
         collectionRecycler.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
 
-
+        HeadlinesAdapter headlinesAdapter = new HeadlinesAdapter(getContext());
+        collectionRecycler.setAdapter(headlinesAdapter);
         collectionViewModel.getHeadlines().observe(getViewLifecycleOwner(), new Observer<List<HeadlinesDataModel>>() {
             @Override
             public void onChanged(List<HeadlinesDataModel> headlinesDataModels) {
@@ -46,7 +47,7 @@ public class CollectionFragment extends Fragment {
                 } else {
                     noCollectionText.setVisibility(View.GONE);
                 }
-                collectionRecycler.setAdapter(new HeadlinesAdapter(getContext(), headlinesDataModels));
+                headlinesAdapter.setHeadlinesList(headlinesDataModels);
 
             }
         });

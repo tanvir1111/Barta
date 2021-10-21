@@ -40,6 +40,7 @@ public class NewsHeadlinesActivity extends AppCompatActivity {
         viewPager.setAdapter(newsHeadlinesSectionsPagerAdapter);
         tabLayout = findViewById(R.id.news_headlines_tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.setOffscreenPageLimit(3);
 
 
         backBtn.setOnClickListener(new View.OnClickListener() {

@@ -26,9 +26,8 @@ public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> 
     private Context ctx;
     private List<HeadlinesDataModel> headlinesList;
 
-    public HeadlinesAdapter(Context ctx, List<HeadlinesDataModel> headlinesList) {
+    public HeadlinesAdapter(Context ctx) {
         this.ctx = ctx;
-        this.headlinesList = headlinesList;
     }
 
     @NonNull
@@ -89,5 +88,10 @@ public class HeadlinesAdapter extends RecyclerView.Adapter<HeadlinesViewHolder> 
             return 0;
         }
         return headlinesList.size();
+    }
+
+    public void setHeadlinesList(List<HeadlinesDataModel> headlinesList) {
+        this.headlinesList = headlinesList;
+        notifyDataSetChanged();
     }
 }
