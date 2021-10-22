@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.qubitech.barta.ui.Collection.CollectionViewModel;
@@ -18,10 +19,12 @@ import com.squareup.picasso.Picasso;
 
 import static com.qubitech.barta.ui.News.NewsPapersStaticData.detailedNewsIntentARG;
 
+
 public class DetailedNewsActivity extends AppCompatActivity {
     private TextView title, section, headline, details, date_time;
     private ImageView backBtn, newsImage, collectionBtn, shareBtn;
     private CollectionViewModel collectionViewModel;
+    private ConstraintLayout parentLayout;
 
 
     @Override
@@ -41,6 +44,8 @@ public class DetailedNewsActivity extends AppCompatActivity {
         date_time = findViewById(R.id.date_and_time);
         collectionBtn = findViewById(R.id.collection_btn);
         shareBtn = findViewById(R.id.share_btn);
+        parentLayout = findViewById(R.id.parent_layout);
+
 
         if (collectionViewModel.getNews(detailedNews.getNewsUrl()) != null) {
             collectionBtn.setImageResource(R.drawable.collection);
@@ -52,9 +57,8 @@ public class DetailedNewsActivity extends AppCompatActivity {
         } else {
             if (detailedNews.getDescription() == null) {
                 details.setText("");
-
-            }
-            details.setText(detailedNews.getDescription());
+            } else
+                details.setText(detailedNews.getDescription());
         }
 
         date_time.setText(detailedNews.getDate_time());

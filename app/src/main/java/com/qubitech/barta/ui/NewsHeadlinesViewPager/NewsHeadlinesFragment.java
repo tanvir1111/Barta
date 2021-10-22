@@ -64,11 +64,13 @@ public class NewsHeadlinesFragment extends Fragment {
         String newsCategory = NewsPapersStaticData.getTabs().get(currentNewspaper)[index];
 
         headlinesRecycler.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        HeadlinesAdapter headlinesAdapter = new HeadlinesAdapter(getContext());
+        headlinesRecycler.setAdapter(headlinesAdapter);
+
         newsHeadlinesViewModel.getNews(currentNewspaper, newsCategory).observe(getViewLifecycleOwner(), new Observer<List<HeadlinesDataModel>>() {
             @Override
             public void onChanged(List<HeadlinesDataModel> headlinesDataModels) {
-                headlinesRecycler.setAdapter(new HeadlinesAdapter(getContext(), headlinesDataModels));
-
+                headlinesAdapter.setHeadlinesList(headlinesDataModels);
             }
         });
 

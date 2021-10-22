@@ -102,4 +102,6 @@ public class NewsPaperListAdapter extends RecyclerView.Adapter<NewsPaperListView
     public int getItemCount() {
         return newsPaperListDataModels.size();
     }
+
+
 }
