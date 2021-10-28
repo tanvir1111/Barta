@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -60,6 +61,7 @@ public class NewsHeadlinesFragment extends Fragment {
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_news_headlines, container, false);
         RecyclerView headlinesRecycler = root.findViewById(R.id.news_headlines_recycler);
+        TextView noNewsText= root.findViewById(R.id.tv_no_news);
         String currentNewspaper = getActivity().getIntent().getStringExtra(currentNewspaperIntentARG);
         String newsCategory = NewsPapersStaticData.getTabs().get(currentNewspaper)[index];
 
@@ -71,6 +73,7 @@ public class NewsHeadlinesFragment extends Fragment {
             @Override
             public void onChanged(List<HeadlinesDataModel> headlinesDataModels) {
                 headlinesAdapter.setHeadlinesList(headlinesDataModels);
+                noNewsText.setVisibility(headlinesDataModels.size()==0?View.VISIBLE:View.GONE);
             }
         });
 
